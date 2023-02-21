@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import context.Singleton;
+import model.Admin;
 
 
 public class DAOAdmin implements IDAOAdmin{
