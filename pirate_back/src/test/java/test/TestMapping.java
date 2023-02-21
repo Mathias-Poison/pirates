@@ -11,6 +11,6 @@ public class TestMapping {
 	
 		emf.close();
 	}
-	//T'es grand mort Mathias
+	//Tes grands morts Mathias
 
 }
