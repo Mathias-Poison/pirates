@@ -1,5 +1,7 @@
 package dao;
 
-public interface IDAORessource {
+import model.Ressource;
 
-}
+public interface IDAORessource extends IDAO<Ressource,Integer> {
+
+	}
