@@ -8,24 +8,7 @@ import javax.persistence.EntityTransaction;
 import context.Singleton;
 import model.Ressource;
 
-public class DAORessource implements IDAORessource {
-
-	@Override
-	public Ressource findById(Integer id) {
-		EntityManager em = Singleton.getInstance().getEmf().createEntityManager();
-		Ressource ressource = em.find(Ressource.class,id);
-		em.close();
-		return ressource;
-	}
-
-	@Override
-	public List<Ressource> findAll() {
-		EntityManager em = Singleton.getInstance().getEmf().createEntityManager();
-		
-		List<Ressource> ressourcex = em.createQuery("from Ressource").getResultList();
-		em.close();
-		return ressourcex;
-	}
+abstract class DAORessource implements IDAORessource {
 
 	@Override
 	public Ressource save(Ressource ressource) {
@@ -60,12 +43,9 @@ public class DAORessource implements IDAORessource {
 		return ressource;
 	}
 
-	@Override
-	public void delete(Integer id) {
+	private void delete() {
 		EntityManager em = Singleton.getInstance().getEmf().createEntityManager();
-		Ressource ressource = em.find(Ressource.class,id);
 		em.getTransaction().begin();
-		em.remove(ressource);
 		em.getTransaction().commit();
 		em.close();	
 	}
