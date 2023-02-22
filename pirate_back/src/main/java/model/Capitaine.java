@@ -1,12 +1,21 @@
 package model;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("Capitaine")
 public class Capitaine extends Compte {
 
-	protected String pseudonyme ;
-	protected int tauxReussite ;
+	private String pseudonyme ;
+	private int tauxReussite ;
 	
-	public Capitaine(int id, int age, int mdp, String pseudo, String pseudonyme, int tauxReussite) {
-		super(id, age, mdp, pseudo);
+	public Capitaine() {
+
+	}
+	
+	public Capitaine(int age,String login, String mdp, String pseudo, String pseudonyme, int tauxReussite) {
+		super(age, login, mdp, pseudo);
 		
 		this.pseudonyme = pseudonyme;
 		this.tauxReussite = tauxReussite;
@@ -31,7 +40,7 @@ public class Capitaine extends Compte {
 	@Override
 	public String toString() {
 		return "Capitaine [pseudonyme=" + pseudonyme + ", tauxReussite=" + tauxReussite + ", id=" + id + ", age=" + age
-				+ ", mdp=" + mdp + ", pseudo=" + pseudo + "]";
+				+ ", login=" + login + ", mdp=" + mdp + ", pseudo=" + pseudo + "]";
 	}
 	
 }
