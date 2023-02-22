@@ -3,53 +3,47 @@ package dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
 
 import context.Singleton;
 import model.Ressource;
 
-abstract class DAORessource implements IDAORessource {
+public class DAORessource implements IDAORessource {
 
 	@Override
-	public Ressource save(Ressource ressource) {
-		
-		EntityManager em=null;
-		EntityTransaction tx=null;
-		
-		try {
-			
-			em = Singleton.getInstance().getEmf().createEntityManager();
-			tx=em.getTransaction();
-			tx.begin();
-			ressource = em.merge(ressource);
-			tx.commit();
-		}
-		catch(Exception e) 
-		{
-			e.printStackTrace();
-			if(tx!=null && tx.isActive()) 
-			{
-				tx.rollback();
-			}
-		}
-		finally 
-		{
-			if(em!=null) 
-			{
-				em.close();
-			}
-		}
-	
+	public Ressource findById(Integer id) {
+		EntityManager em = Singleton.getInstance().getEmf().createEntityManager();
+		Ressource mission = em.find(Ressource.class,id);
+		em.close();
+		return mission;
+	}
+
+	@Override
+	public List<Ressource> findAll() {
+		EntityManager em = Singleton.getInstance().getEmf().createEntityManager();
+		List<Ressource> ressource = em.createQuery("from Ressource").getResultList();
+		em.close();
 		return ressource;
 	}
 
-	private void delete() {
+	@Override
+	public Ressource save(Ressource mission) {
 		EntityManager em = Singleton.getInstance().getEmf().createEntityManager();
 		em.getTransaction().begin();
+		mission = em.merge(mission);
+		em.getTransaction().commit();
+		em.close();
+		return mission;
+	}
+
+	@Override
+	public void delete(Integer id) {
+		EntityManager em = Singleton.getInstance().getEmf().createEntityManager();
+		Ressource mission = em.find(Ressource.class,id);
+		em.getTransaction().begin();
+		em.remove(mission);
 		em.getTransaction().commit();
 		em.close();	
 	}
-	
 
 	
 }
