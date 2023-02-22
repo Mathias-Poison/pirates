@@ -2,14 +2,33 @@ package model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="mission")
 public class Missions {
 
-	protected int id;
-	protected int duree;
-	protected String lieu;
-	protected int difficulte;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	protected Integer id;
+	@Column(name="nom",nullable = false,columnDefinition = "VARCHAR(50)")
 	protected String libelle;
+	@Column( length = 3, nullable = false)
+	protected int duree;
+	@Column(nullable = false,columnDefinition = "VARCHAR(50)")
+	protected String lieu;
+	@Column(nullable = false, length = 3)
+	protected int difficulte;
+	
 	protected LocalDate date;
+	
+	public Missions() {}
+	
 	public Missions(int duree, String lieu, int difficulte, String libelle, LocalDate date) {
 		this.duree = duree;
 		this.lieu = lieu;
