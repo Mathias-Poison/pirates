@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Enchere {
@@ -15,10 +17,16 @@ public class Enchere {
 	private double prix;
 	private LocalDate date;
 	
-	private Missions missions;
+	private Mission missions;
 	
+	@ManyToOne
+	@JoinColumn(name = "capitaine")
 	private Capitaine capitaine;
 	
+	@ManyToOne
+	@JoinColumn(name = "mission")
+	private Mission mission;
+
 	public Enchere() {
 		// TODO Auto-generated constructor stub
 	}

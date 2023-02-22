@@ -1,8 +1,8 @@
 package dao;
 
-import model.Missions;
+import model.Mission;
 
-public interface IDAOMission extends IDAO <Missions, Integer> {
+public interface IDAOMission extends IDAO <Mission, Integer> {
 	
 	
 	

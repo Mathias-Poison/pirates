@@ -2,6 +2,6 @@ package model;
 
 public enum Cargaison {
 
-	petit, moyen,grand;
+	petite, moyenne,grande;
 	
 }

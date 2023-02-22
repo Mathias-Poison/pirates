@@ -1,7 +1,10 @@
 package model;
 
+import java.util.List;
+
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 @Entity
 @DiscriminatorValue("client")
@@ -9,6 +12,9 @@ public class Client extends Compte{
 
 	private String nom;
 	private String prenom;
+	
+	@OneToMany(mappedBy = "client")
+	private List<Mission> missions;
 	
 	public Client() {
 
