@@ -5,28 +5,28 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import context.Singleton;
-import model.Missions;
+import model.Mission;
 
 public class DAOMission implements IDAOMission {
 
 	@Override
-	public Missions findById(Integer id) {
+	public Mission findById(Integer id) {
 		EntityManager em = Singleton.getInstance().getEmf().createEntityManager();
-		Missions mission = em.find(Missions.class,id);
+		Mission mission = em.find(Mission.class,id);
 		em.close();
 		return mission;
 	}
 
 	@Override
-	public List<Missions> findAll() {
+	public List<Mission> findAll() {
 		EntityManager em = Singleton.getInstance().getEmf().createEntityManager();
-		List<Missions> missions = em.createQuery("from Missions").getResultList();
+		List<Mission> missions = em.createQuery("from Missions").getResultList();
 		em.close();
 		return missions;
 	}
 
 	@Override
-	public Missions save(Missions mission) {
+	public Mission save(Mission mission) {
 		EntityManager em = Singleton.getInstance().getEmf().createEntityManager();
 		em.getTransaction().begin();
 		mission = em.merge(mission);
@@ -38,7 +38,7 @@ public class DAOMission implements IDAOMission {
 	@Override
 	public void delete(Integer id) {
 		EntityManager em = Singleton.getInstance().getEmf().createEntityManager();
-		Missions mission = em.find(Missions.class,id);
+		Mission mission = em.find(Mission.class,id);
 		em.getTransaction().begin();
 		em.remove(mission);
 		em.getTransaction().commit();

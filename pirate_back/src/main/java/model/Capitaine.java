@@ -1,7 +1,11 @@
 package model;
 
+import java.util.List;
+
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 @DiscriminatorValue("Capitaine")
@@ -9,6 +13,12 @@ public class Capitaine extends Compte {
 
 	private String pseudonyme ;
 	private int tauxReussite ;
+	
+	@OneToMany(mappedBy = "capitaine")
+	private List<Mission> missions;
+	
+	@OneToMany(mappedBy = "capitaine")
+	private List<Enchere> encheres;
 	
 	public Capitaine() {
 
