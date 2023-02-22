@@ -1,5 +1,8 @@
 package dao;
 
-public interface IDAOEnchere {
+
+import model.Enchere;
+
+public interface IDAOEnchere extends IDAO<Enchere,Integer> {
 
 }

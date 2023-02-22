@@ -5,45 +5,48 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import context.Singleton;
-import model.Enchere;
+import model.Admin;
 
-public class DAOEnchere implements IDAOEnchere {
+public class DAOAdmin implements IDAOAdmin{
+
 	@Override
-	public Enchere findById(Integer id) {
+	public Admin findById(Integer id) {
 		EntityManager em = Singleton.getInstance().getEmf().createEntityManager();
-		Enchere enchere = em.find(Enchere.class,id);
+		Admin admin = em.find(Admin.class,id);
 		em.close();
-		return enchere;
+		return admin;
 	}
 	
 	@Override
-	public List<Enchere> findAll() {
+	public List<Admin> findAll() {
 		EntityManager em = Singleton.getInstance().getEmf().createEntityManager();
 		
-		List<Enchere> encheres = em.createQuery("from Enchere").getResultList();
+		List<Admin> admins = em.createQuery("from Dictateur").getResultList();
 		em.close();
-		return encheres;
+		return admins;
 	}
 
 	@Override
-	public Enchere save(Enchere enchere) {
+	public Admin save(Admin admin) {
 		EntityManager em = Singleton.getInstance().getEmf().createEntityManager();
 		em.getTransaction().begin();
-		enchere = em.merge(enchere);
+		admin = em.merge(admin);
 		em.getTransaction().commit();
 		em.close();
-		return enchere;
+		return admin;
 
 	}
 
 	@Override
 	public void delete(Integer id) {
 		EntityManager em = Singleton.getInstance().getEmf().createEntityManager();
-		Enchere enchere = em.find(Enchere.class,id);
+		Admin admin = em.find(Admin.class,id);
 		em.getTransaction().begin();
-		em.remove(enchere);
+		em.remove(admin);
 		em.getTransaction().commit();
 		em.close();	
 	}
+
+
 
 }
