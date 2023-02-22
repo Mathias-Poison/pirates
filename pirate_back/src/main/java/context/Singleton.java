@@ -3,20 +3,25 @@ package context;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import dao.DAOBateau;
 import dao.DAOCompte;
-import dao.IDAOActivite;
-import dao.IDAOBiome;
+import dao.DAOEnchere;
+import dao.DAOMission;
+import dao.DAORessource;
+import dao.IDAOBateau;
 import dao.IDAOCompte;
-import dao.IDAOEspece;
+import dao.IDAOEnchere;
+import dao.IDAOMission;
+import dao.IDAORessource;
 
 public class Singleton {
 
 	
 	private IDAOCompte daoCompte = new DAOCompte();
-	private IDAOActivite daoActivite = new DAOActivite();
-	private IDAOBiome daoBiome = new DAOBiome();
-	private IDAOEspece daoEspece = new DAOEspece();
-	private IDAOReservation daoReservation = new DAOReservation();
+	private IDAOBateau daoBateau = new DAOBateau();
+	private IDAOEnchere daoEnchere = new DAOEnchere();
+	private IDAOMission daoMission = new DAOMission();
+	private IDAORessource daoRessource = new DAORessource();
 
 	EntityManagerFactory emf= Persistence.createEntityManagerFactory("reserve");
 	
@@ -35,9 +40,11 @@ public class Singleton {
 	}
 
 
+
 	public IDAOCompte getDaoCompte() {
 		return daoCompte;
 	}
+
 
 
 	public void setDaoCompte(IDAOCompte daoCompte) {
@@ -45,48 +52,51 @@ public class Singleton {
 	}
 
 
-	public IDAOActivite getDaoActivite() {
-		return daoActivite;
-	}
 
-
-	public void setDaoActivite(IDAOActivite daoActivite) {
-		this.daoActivite = daoActivite;
-	}
-
-
-	public IDAOBiome getDaoBiome() {
-		return daoBiome;
-	}
-
-
-	public void setDaoBiome(IDAOBiome daoBiome) {
-		this.daoBiome = daoBiome;
-	}
-
-
-	
-
-	public IDAOEspece getDaoEspece() {
-		return daoEspece;
+	public IDAOBateau getDaoBateau() {
+		return daoBateau;
 	}
 
 
 
-	public void setDaoEspece(IDAOEspece daoEspece) {
-		this.daoEspece = daoEspece;
+	public void setDaoBateau(IDAOBateau daoBateau) {
+		this.daoBateau = daoBateau;
 	}
 
 
 
-	public IDAOReservation getDaoReservation() {
-		return daoReservation;
+	public IDAOEnchere getDaoEnchere() {
+		return daoEnchere;
 	}
 
 
 
-	public void setDaoReservation(IDAOReservation daoReservation) {
-		this.daoReservation = daoReservation;
+	public void setDaoEnchere(IDAOEnchere daoEnchere) {
+		this.daoEnchere = daoEnchere;
+	}
+
+
+
+	public IDAOMission getDaoMission() {
+		return daoMission;
+	}
+
+
+
+	public void setDaoMission(IDAOMission daoMission) {
+		this.daoMission = daoMission;
+	}
+
+
+
+	public IDAORessource getDaoRessource() {
+		return daoRessource;
+	}
+
+
+
+	public void setDaoRessource(IDAORessource daoRessource) {
+		this.daoRessource = daoRessource;
 	}
 
 
