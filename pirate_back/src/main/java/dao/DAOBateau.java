@@ -22,9 +22,9 @@ public class DAOBateau implements IDAOBateau {
 
 		EntityManager em = Singleton.getInstance().getEmf().createEntityManager();
 
-		List<Bateau> bateaus = em.createQuery("from Bateau").getResultList();
+		List<Bateau> bateaux = em.createQuery("from Bateau").getResultList();
 		em.close();
-		return bateaus;
+		return bateaux;
 
 	}
 

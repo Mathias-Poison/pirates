@@ -1,5 +1,7 @@
 package dao;
 
-public interface IDAOBateau {
+import model.Bateau;
+
+public interface IDAOBateau extends IDAO<Bateau,Integer> {
 
 }
