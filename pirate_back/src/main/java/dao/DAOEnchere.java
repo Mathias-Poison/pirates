@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import context.Singleton;
+import model.Capitaine;
 import model.Enchere;
 
 public class DAOEnchere implements IDAOEnchere {
@@ -46,4 +47,15 @@ public class DAOEnchere implements IDAOEnchere {
 		em.close();	
 	}
 
+	@Override
+	public List<Enchere> findAllEnchereByCapitaine() {
+		EntityManager em = Singleton.getInstance().getEmf().createEntityManager();
+		String type = "ranger";
+		List<Enchere> encheres = em.createQuery("from Compte c where c.type_compte=:type").setParameter("type",type).getResultList();
+		em.close();
+		return encheres;
+		
+	}
+
+	
 }
