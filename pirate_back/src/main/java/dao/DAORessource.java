@@ -3,7 +3,6 @@ package dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
 
 import context.Singleton;
 import model.Ressource;
@@ -13,63 +12,38 @@ public class DAORessource implements IDAORessource {
 	@Override
 	public Ressource findById(Integer id) {
 		EntityManager em = Singleton.getInstance().getEmf().createEntityManager();
-		Ressource ressource = em.find(Ressource.class,id);
+		Ressource mission = em.find(Ressource.class,id);
 		em.close();
-		return ressource;
+		return mission;
 	}
 
 	@Override
 	public List<Ressource> findAll() {
 		EntityManager em = Singleton.getInstance().getEmf().createEntityManager();
-		
-		List<Ressource> ressourcex = em.createQuery("from Ressource").getResultList();
+		List<Ressource> ressource = em.createQuery("from Ressource").getResultList();
 		em.close();
-		return ressourcex;
+		return ressource;
 	}
 
 	@Override
-	public Ressource save(Ressource ressource) {
-		
-		EntityManager em=null;
-		EntityTransaction tx=null;
-		
-		try {
-			
-			em = Singleton.getInstance().getEmf().createEntityManager();
-			tx=em.getTransaction();
-			tx.begin();
-			ressource = em.merge(ressource);
-			tx.commit();
-		}
-		catch(Exception e) 
-		{
-			e.printStackTrace();
-			if(tx!=null && tx.isActive()) 
-			{
-				tx.rollback();
-			}
-		}
-		finally 
-		{
-			if(em!=null) 
-			{
-				em.close();
-			}
-		}
-	
-		return ressource;
+	public Ressource save(Ressource mission) {
+		EntityManager em = Singleton.getInstance().getEmf().createEntityManager();
+		em.getTransaction().begin();
+		mission = em.merge(mission);
+		em.getTransaction().commit();
+		em.close();
+		return mission;
 	}
 
 	@Override
 	public void delete(Integer id) {
 		EntityManager em = Singleton.getInstance().getEmf().createEntityManager();
-		Ressource ressource = em.find(Ressource.class,id);
+		Ressource mission = em.find(Ressource.class,id);
 		em.getTransaction().begin();
-		em.remove(ressource);
+		em.remove(mission);
 		em.getTransaction().commit();
 		em.close();	
 	}
-	
 
 	
 }
