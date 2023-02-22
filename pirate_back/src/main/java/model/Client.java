@@ -1,12 +1,21 @@
 package model;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
+@Entity
+@DiscriminatorValue("client")
 public class Client extends Compte{
 
-	protected String nom;
-	protected String prenom;
+	private String nom;
+	private String prenom;
 	
-	public Client(int id, int age, int mdp, String pseudo, String nom, String prenom) {
-		super(id, age, mdp, pseudo);
+	public Client() {
+
+	}
+	
+	public Client(int age, String login, String mdp, String pseudo, String nom, String prenom) {
+		super(age, login, mdp, pseudo);
 		
 		this.nom = nom;
 		this.prenom = prenom;
@@ -30,8 +39,10 @@ public class Client extends Compte{
 
 	@Override
 	public String toString() {
-		return "Client [nom=" + nom + ", prenom=" + prenom + ", id=" + id + ", age=" + age + ", mdp=" + mdp
-				+ ", pseudo=" + pseudo + "]";
+		return "Client [nom=" + nom + ", prenom=" + prenom + ", id=" + id + ", age=" + age + ", login=" + login
+				+ ", mdp=" + mdp + ", pseudo=" + pseudo + "]";
 	}
+
+	
 
 }
