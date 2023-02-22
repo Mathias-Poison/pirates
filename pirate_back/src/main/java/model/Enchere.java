@@ -2,12 +2,28 @@ package model;
 
 import java.time.LocalDate;
 
-public class Enchere {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-	protected double prix;
-	protected LocalDate date;
+@Entity
+public class Enchere {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	private double prix;
+	private LocalDate date;
 	
-	public Enchere(double prix, LocalDate date) {
+	private Missions missions;
+	
+	private Capitaine capitaine;
+	
+	public Enchere() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Enchere(double prix, LocalDate date, int id) {
 		this.prix = prix;
 		this.date = date;
 	}
