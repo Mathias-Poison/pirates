@@ -51,7 +51,7 @@ public class JpaConfig {
 		props.setProperty("hibernate.show_sql", "true");
 		
 		emf.setDataSource(dataSource); // On donne la DataSource
-		emf.setPackagesToScan("fr.formation.model"); // On donne la localisation des classes modèle
+		emf.setPackagesToScan("pirate.model"); // On donne la localisation des classes modèle
 		emf.setJpaVendorAdapter(new HibernateJpaVendorAdapter()); // On donne le fournisseur d'ORM
 		emf.setJpaProperties(props); // On donne les propriétés JPA
 		

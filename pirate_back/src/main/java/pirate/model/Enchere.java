@@ -17,7 +17,6 @@ public class Enchere {
 	private double prix;
 	private LocalDate date;
 	
-	private Mission missions;
 	@ManyToOne
 	@JoinColumn(name = "capitaine")
 	private Capitaine capitaine;

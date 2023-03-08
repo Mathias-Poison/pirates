@@ -1,31 +1,81 @@
 package pirate.model;
 
-import jakarta.persistence.Embeddable;
+import java.util.List;
 
-@Embeddable
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
+
+@Entity
 public class Bateau {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 	
-	private int id;
-
+	@Column(name="Nom")
+	private String nom;
+	
+	@Column(name="cargaison",columnDefinition = "ENUM('petite','moyenne','grande')")
+	@Enumerated(EnumType.STRING)
+	private Cargaison cargaison;
+	
+	@Column(name="armement",columnDefinition = "ENUM('leger','moyen','lourd')")
+	@Enumerated(EnumType.STRING)
+	
+	private Armement armement;
+	
+	
+	@OneToMany(mappedBy = "ressource")
+	private List<Mission> missions;
+	
 	public Bateau() {
+
 	}
 	
-	public Bateau(int id) {
-		this.id = id;
+	public Bateau(Cargaison cargaison, Armement armement, String nom) {
+		this.cargaison = cargaison;
+		this.armement = armement;
+		this.nom= nom;
+		
 	}
 
-	public int getId() {
-		return id;
+	public Cargaison getCargaison() {
+		return cargaison;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setCargaison(Cargaison cargaison) {
+		this.cargaison = cargaison;
+	}
+
+	public Armement getArmement() {
+		return armement;
+	}
+
+	public void setArmement(Armement armement) {
+		this.armement = armement;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
 
 	@Override
 	public String toString() {
-		return "Bateau [id=" + id + "]";
+		return "Ressource [id=" + id + ", cargaison=" + cargaison + ", armement=" + armement + ", bateau=" + nom
+				+ ", missions=" + missions + "]";
 	}
-		
+
+
+	
 }
