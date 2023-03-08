@@ -1,10 +1,10 @@
-package dao;
+package pirate.dao;
 
 import java.util.List;
 
-import model.Capitaine;
-import model.Client;
-import model.Compte;
+import pirate.model.Capitaine;
+import pirate.model.Client;
+import pirate.model.Compte;
 
 public interface IDAOCompte extends IDAO<Compte,Integer>{
 

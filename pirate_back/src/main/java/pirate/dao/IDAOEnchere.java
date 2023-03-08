@@ -1,9 +1,9 @@
-package dao;
+package pirate.dao;
 
 
 import java.util.List;
 
-import model.Enchere;
+import pirate.model.Enchere;
 
 public interface IDAOEnchere extends IDAO<Enchere,Integer> {
 

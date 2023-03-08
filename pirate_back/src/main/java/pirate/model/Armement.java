@@ -1,4 +1,4 @@
-package model;
+package pirate.model;
 
 public enum Armement {
 
