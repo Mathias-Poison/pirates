@@ -1,0 +1,52 @@
+<style>
+  #base
+  {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 100%;
+  }
+
+  #title,formulaire
+  {
+    flex-direction: column;
+
+  }
+#inscription
+{
+  display: none;
+  cursor:pointer;
+}
+
+#lienInscription
+{
+  cursor:pointer;
+}
+
+
+</style>
+
+<form >
+
+<div id="base">
+  <div id = "enchere">
+    <table >
+      <tr><td>Enchere 1 </td><td>Client x</td><td>Montant x</td><td>Fin dans x heures</td></tr>
+      <tr><td>Enchere 2 </td><td>Client y</td><td>Montant y</td><td>Fin dans y heures</td></tr>
+    </table>
+  </div>
+</div>
+</form>
+
+
+<script>
+lienInscription.onclick = show;
+
+function show()
+{
+  console.log("Show");
+  inscription.style.display="block"
+}
+
+
+</script>
