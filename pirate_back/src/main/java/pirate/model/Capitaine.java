@@ -49,7 +49,7 @@ public class Capitaine extends Compte {
 	@Override
 	public String toString() {
 		return "Capitaine [pseudonyme=" + pseudonyme + ", tauxReussite=" + tauxReussite + ", id=" + id + ", age=" + age
-				+ ", login=" + login + ", mdp=" + mdp + ", pseudo=" + pseudo + "]";
+				+ ", login=" + login + ", mdp=" + password + ", pseudo=" + pseudo + "]";
 	}
 	
 }
