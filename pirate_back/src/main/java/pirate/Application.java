@@ -1,4 +1,4 @@
-package pirate.application;
+package pirate;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

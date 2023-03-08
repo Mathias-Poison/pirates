@@ -46,7 +46,7 @@ public class Mission {
 	
 	@ManyToOne
 	@JoinColumn(name = "ressource")
-	private Ressource ressource;
+	private Bateau ressource;
 	
 	@Column(name="statut",columnDefinition = "ENUM('EnAttente','EnCours','Terminee')")
 	@Enumerated(EnumType.STRING)
