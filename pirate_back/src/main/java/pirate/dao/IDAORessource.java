@@ -1,6 +1,6 @@
-package dao;
+package pirate.dao;
 
-import model.Ressource;
+import pirate.model.Ressource;
 
 public interface IDAORessource extends IDAO<Ressource,Integer> {
 

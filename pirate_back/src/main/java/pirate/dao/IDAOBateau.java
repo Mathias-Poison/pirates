@@ -1,6 +1,6 @@
-package dao;
+package pirate.dao;
 
-import model.Bateau;
+import pirate.model.Bateau;
 
 public interface IDAOBateau extends IDAO<Bateau,Integer> {
 

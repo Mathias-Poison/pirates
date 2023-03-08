@@ -1,6 +1,6 @@
-package dao;
+package pirate.dao;
 
-import model.Mission;
+import pirate.model.Mission;
 
 public interface IDAOMission extends IDAO <Mission, Integer> {
 	
