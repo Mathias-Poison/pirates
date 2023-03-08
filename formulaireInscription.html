@@ -63,9 +63,18 @@
 
 <script>
 
+changeTypeCompte()
+
 btnAddCompte.onclick=function()
 {
   addFormCompte.style.display="block";
+}
+
+const typeCompte = document.querySelector('input[name="typeCompte"]:checked')
+
+if(typeCompte)
+{
+  changeTypeCompte(typeCompte.value)
 }
 
 function changeTypeCompte(type)
