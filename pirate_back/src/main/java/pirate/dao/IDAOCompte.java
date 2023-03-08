@@ -13,9 +13,9 @@ public interface IDAOCompte extends JpaRepository<Compte, Integer>{
 
 	public Compte findByLoginAndPassword(String login, String password);
 	
-	@Query("select c from Compte c where type_compte = ?1")
+	@Query("select c from Capitaine c")
 	public List<Capitaine> findAllCapitaine();
 	
-	@Query("select c from Compte c where type_compte = ?1")
+	@Query("select c from Client c")
 	public List<Client> findAllClient();
 }

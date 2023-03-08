@@ -18,7 +18,7 @@ public class Admin extends Compte {
 
 	@Override
 	public String toString() {
-		return "Admin [id=" + id + ", age=" + age + ", login=" + login + ", mdp=" + mdp + ", pseudo=" + pseudo + "]";
+		return "Admin [id=" + id + ", age=" + age + ", login=" + login + ", mdp=" + password + ", pseudo=" + pseudo + "]";
 	}
 	
 }

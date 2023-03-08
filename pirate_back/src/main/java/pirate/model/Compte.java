@@ -23,8 +23,8 @@ public class Compte {
 	protected int age;
 	@Column(length = 25,nullable = false)
 	protected String login;
-	@Column(length = 125,nullable = false)
-	protected String mdp;
+	@Column(name="password",length = 125,nullable = false)
+	protected String password;
 	@Column(length = 50,nullable = false)
 	protected String pseudo;
 	
@@ -32,10 +32,10 @@ public class Compte {
 		
 	}
 	
-	public Compte(int age, String login, String mdp, String pseudo) {
+	public Compte(int age, String login, String password, String pseudo) {
 		this.age = age;
 		this.login = login;
-		this.mdp = mdp;
+		this.password = password;
 		this.pseudo = pseudo;
 	}
 
@@ -63,12 +63,12 @@ public class Compte {
 		this.login = login;
 	}
 
-	public String getMdp() {
-		return mdp;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setMdp(String mdp) {
-		this.mdp = mdp;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getPseudo() {
@@ -81,7 +81,7 @@ public class Compte {
 
 	@Override
 	public String toString() {
-		return "Compte [id=" + id + ", age=" + age + ", login=" + login + ", mdp=" + mdp + ", pseudo=" + pseudo + "]";
+		return "Compte [id=" + id + ", age=" + age + ", login=" + login + ", password=" + password + ", pseudo=" + pseudo + "]";
 	}
 	
 	
