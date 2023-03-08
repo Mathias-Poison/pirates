@@ -11,14 +11,15 @@ public class Admin extends Compte {
 		
 	}
 	
-	public Admin(int age, String login, String mdp, String pseudo) {
-		super(age, login, mdp, pseudo);
+	public Admin(int age, String login, String password) {
+		super(age, login, password);
 		
 	}
+	
 
 	@Override
 	public String toString() {
-		return "Admin [id=" + id + ", age=" + age + ", login=" + login + ", mdp=" + password + ", pseudo=" + pseudo + "]";
+		return "Admin [id=" + id + ", age=" + age + ", login=" + login + ", mdp=" + password + ", pseudo=" + "]";
 	}
 	
 }

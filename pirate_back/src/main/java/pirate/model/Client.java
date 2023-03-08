@@ -20,8 +20,8 @@ public class Client extends Compte{
 
 	}
 	
-	public Client(int age, String login, String mdp, String pseudo, String nom, String prenom) {
-		super(age, login, mdp, pseudo);
+	public Client(int age, String login, String password, String nom, String prenom) {
+		super(age, login, password);
 		
 		this.nom = nom;
 		this.prenom = prenom;
@@ -46,7 +46,7 @@ public class Client extends Compte{
 	@Override
 	public String toString() {
 		return "Client [nom=" + nom + ", prenom=" + prenom + ", id=" + id + ", age=" + age + ", login=" + login
-				+ ", mdp=" + password + ", pseudo=" + pseudo + "]";
+				+ ", mdp=" + password  + "]";
 	}
 
 	

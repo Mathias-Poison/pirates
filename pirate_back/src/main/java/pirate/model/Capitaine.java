@@ -23,8 +23,8 @@ public class Capitaine extends Compte {
 
 	}
 	
-	public Capitaine(int age,String login, String mdp, String pseudo, String pseudonyme, int tauxReussite) {
-		super(age, login, mdp, pseudo);
+	public Capitaine(int age,String login, String password, String pseudonyme, int tauxReussite) {
+		super(age, login, password);
 		
 		this.pseudonyme = pseudonyme;
 		this.tauxReussite = tauxReussite;
@@ -49,7 +49,7 @@ public class Capitaine extends Compte {
 	@Override
 	public String toString() {
 		return "Capitaine [pseudonyme=" + pseudonyme + ", tauxReussite=" + tauxReussite + ", id=" + id + ", age=" + age
-				+ ", login=" + login + ", mdp=" + password + ", pseudo=" + pseudo + "]";
+				+ ", login=" + login + ", mdp=" + password + ", pseudo=" + "]";
 	}
 	
 }

@@ -25,18 +25,16 @@ public class Compte {
 	protected String login;
 	@Column(name="password",length = 125,nullable = false)
 	protected String password;
-	@Column(length = 50,nullable = false)
-	protected String pseudo;
 	
 	public Compte() {
 		
 	}
 	
-	public Compte(int age, String login, String password, String pseudo) {
+	public Compte(int age, String login, String password) {
 		this.age = age;
 		this.login = login;
 		this.password = password;
-		this.pseudo = pseudo;
+
 	}
 
 	public int getId() {
@@ -71,17 +69,9 @@ public class Compte {
 		this.password = password;
 	}
 
-	public String getPseudo() {
-		return pseudo;
-	}
-
-	public void setPseudo(String pseudo) {
-		this.pseudo = pseudo;
-	}
-
 	@Override
 	public String toString() {
-		return "Compte [id=" + id + ", age=" + age + ", login=" + login + ", password=" + password + ", pseudo=" + pseudo + "]";
+		return "Compte [id=" + id + ", age=" + age + ", login=" + login + ", password=" + password + "]";
 	}
 	
 	
