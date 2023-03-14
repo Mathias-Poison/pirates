@@ -54,19 +54,19 @@ public class CompteApiController {
 		return resp;
 	}
 	
-	//find by login et password
-	public Compte findByLoginAndPassword (@RequestParam String login, @RequestParam String password, BindingResult result)
+	//find by login et password(pour se connecter)
+	@GetMapping()
+	public Compte findByLoginAndPassword (@Valid @RequestParam String login, @Valid @RequestParam String password, BindingResult result)
 	{ 
-		if (result.hasErrors())
-		
-		
-		
+		if (result.hasErrors()) 
+		{throw new CompteNotFoundException();}
+		Compte compte = this.daoCompte.findByLoginAndPassword(login, password);		
 		return compte;
 	}
 	
 	
 	
-	//Ajouter compte
+	//Ajouter 
 	@PostMapping
 	@JsonView(Views.Compte.class)
 	public Compte add(@RequestBody @Valid CompteRequest compteRequest, BindingResult result) {
