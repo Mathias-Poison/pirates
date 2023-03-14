@@ -44,6 +44,22 @@ public class CompteApiController {
 		return this.daoCompte.findAll();
 	}
 	
+	//liste des capitaines 
+	@GetMapping("/capitaine")
+	@JsonView(Views.Compte.class)
+	public List<Capitaine> findAllCapitaine() {
+		return this.daoCompte.findAllCapitaine();
+	}
+	
+	
+	//liste des clients
+	@GetMapping("/client")
+	@JsonView(Views.Compte.class)
+	public List<Client> findAllClient() {
+		return this.daoCompte.findAllClient();
+	}
+	
+	
 	
 	//Find by Id
 	@GetMapping("/{id}")
