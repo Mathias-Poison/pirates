@@ -10,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 
 
 @Entity
@@ -27,12 +28,11 @@ public class Bateau {
 	private Cargaison cargaison;
 	
 	@Column(name="armement",columnDefinition = "ENUM('leger','moyen','lourd')")
-	@Enumerated(EnumType.STRING)
-	
+	@Enumerated(EnumType.STRING)	
 	private Armement armement;
 	
-	
-	@OneToMany(mappedBy = "ressource")
+	@OneToOne
+	@Column(name="mission")
 	private List<Mission> missions;
 	
 	public Bateau() {
