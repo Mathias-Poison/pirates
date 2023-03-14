@@ -13,7 +13,7 @@ import jakarta.persistence.ManyToOne;
 public class Enchere {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 	private double prix;
 	private LocalDate date;
 	
@@ -29,7 +29,7 @@ public class Enchere {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Enchere(double prix, LocalDate date, int id) {
+	public Enchere(double prix, LocalDate date, Integer id) {
 		this.prix = prix;
 		this.date = date;
 	}
