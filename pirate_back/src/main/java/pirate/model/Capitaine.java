@@ -2,20 +2,28 @@ package pirate.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
+import pirate.controller.api.Views;
 
 @Entity
 @DiscriminatorValue("Capitaine")
 public class Capitaine extends Compte {
 
+	@JsonView(Views.Capitaine.class)
 	private String pseudonyme ;
+	
+	@JsonView(Views.Capitaine.class)
 	private int tauxReussite ;
 	
+	@JsonView(Views.Capitaine.class)
 	@OneToMany(mappedBy = "capitaine")
 	private List<Mission> missions;
 	
+	@JsonView(Views.Capitaine.class)
 	@OneToMany(mappedBy = "capitaine")
 	private List<Enchere> encheres;
 	
