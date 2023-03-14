@@ -13,7 +13,6 @@ public interface IDAOCompte extends JpaRepository<Compte, Integer>{
 
 	public Compte findByLoginAndPassword(String login, String password);
 	
-	public Compte finfByLoginAndPassword (String login, String password);
 	
 	@Query("select c from Capitaine c")
 	public List<Capitaine> findAllCapitaine();

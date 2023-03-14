@@ -45,7 +45,7 @@ public class Mission {
 	@OneToMany(mappedBy = "mission")
 	private List<Enchere> encheres;
 	
-	@OneToOne
+	@ManyToOne
 	@JoinColumn(name = "bateau")
 	private Bateau bateau;
 	

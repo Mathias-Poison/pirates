@@ -8,7 +8,7 @@ import pirate.model.Cargaison;
 import pirate.model.Mission;
 
 public class BateauRequest {
-	@NotBlank
+	
 	private Integer id;
 	@NotBlank
 	private String nom;

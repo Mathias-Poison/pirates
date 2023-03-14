@@ -22,6 +22,9 @@ import jakarta.validation.Valid;
 import pirate.dao.IDAOCompte;
 import pirate.exception.CompteBadRequestException;
 import pirate.exception.CompteNotFoundException;
+import pirate.model.Admin;
+import pirate.model.Capitaine;
+import pirate.model.Client;
 import pirate.model.Compte;
 import pirate.request.CompteRequest;
 import pirate.response.CompteResponse;
@@ -55,7 +58,7 @@ public class CompteApiController {
 	}
 	
 	//find by login et password(pour se connecter)
-	@GetMapping()
+	@GetMapping("/connexion")
 	public Compte findByLoginAndPassword (@Valid @RequestParam String login, @Valid @RequestParam String password, BindingResult result)
 	{ 
 		if (result.hasErrors()) 
@@ -74,11 +77,29 @@ public class CompteApiController {
 			throw new CompteBadRequestException();
 		}
 		
-		Compte compte = new Compte();
+		if(compteRequest.getType_compte().equals("capitaine"))
+		{
+			Capitaine compte = new Capitaine();
+			BeanUtils.copyProperties(compteRequest, compte);
+			return this.daoCompte.save(compte);
+			
+		}
+		else if(compteRequest.getType_compte().equals("client")) {
+			Client compte = new Client();
+			BeanUtils.copyProperties(compteRequest, compte);
+			return this.daoCompte.save(compte);
+		}
+		else if (compteRequest.getType_compte().equals("admin")) {
+			Admin compte = new Admin();
+			BeanUtils.copyProperties(compteRequest, compte);
+			return this.daoCompte.save(compte);
+		}
+		else {
+			new CompteBadRequestException();
+		}
 		
-		BeanUtils.copyProperties(compteRequest, compte);
-		
-		return this.daoCompte.save(compte);
+		return null;
+			
 	}
 	
 	

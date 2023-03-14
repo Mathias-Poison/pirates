@@ -31,8 +31,7 @@ public class Bateau {
 	@Enumerated(EnumType.STRING)	
 	private Armement armement;
 	
-	@OneToOne
-	@Column(name="mission")
+	@OneToMany(mappedBy ="bateau" )
 	private List<Mission> missions;
 	
 	public Bateau() {

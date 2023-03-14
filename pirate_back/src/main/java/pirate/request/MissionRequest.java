@@ -1,16 +1,17 @@
 package pirate.request;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
 
 public class MissionRequest {
 
-	@NotBlank
+	@Positive
 	protected int duree;
 	@NotBlank
 	protected String libelle;
 	@NotBlank
 	protected String lieu;
-	@NotBlank
+	@Positive
 	protected int difficulte;
 	
 	public int getDuree() {
