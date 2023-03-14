@@ -10,6 +10,7 @@ public class CompteRequest {
 	protected String login;
 	@NotBlank
 	protected String password;
+	
 	public int getAge() {
 		return age;
 	}
