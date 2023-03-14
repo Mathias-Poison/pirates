@@ -1,0 +1,115 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Liste des Comptes</title>
+</head>
+<body>
+
+
+
+
+<div id="content">
+
+     <div id="addFormCompte" class="formAjout">
+            <h3>Inscription</h3>
+            <form action="compte" method="post">
+            <table>
+                <tr>
+                    <td>Type de compte</td>
+                    <td><input required onClick="changeTypeCompte('Pirate')" type="radio" name="typeCompte" value="Pirate"> Pirate
+                        <input required onClick="changeTypeCompte('Client')" type="radio" name="typeCompte" value="Client"> Client
+                    </td>
+                </tr>
+                <tr>
+                    <td>Login : </td>
+                    <td><input required name="login" type="text" placeholder="Saisir le login"></td>
+                </tr>
+                <tr>
+                    <td>Password :</td>
+                    <td> <input required name="password" type="password" placeholder="saisir le Mdp"></td>
+                </tr>
+                <tr>
+                  <td>Date de naissance </td><td><input type="date" value="1500-01-01"></td>
+                </tr>
+                <tr id="inputNom">
+                    <td>Nom : </td>
+                    <td><input class="inputClient" name="nom" type="text" placeholder="Saisir votre nom"></td>
+                </tr>
+                <tr id="inputPrenom">
+                    <td>Prenom : </td>
+                    <td><input class="inputClient" name="prenom" type="text" placeholder="Saisir votre prénom"></td>
+                </tr>
+                <tr id="inputPseudonyme">
+                    <td>Pseudonyme :</td>
+                    <td> <input class="inputPirate"   name="pseudonyme" type="text" placeholder="Saisir votre pseudonyme"></td>
+                </tr>
+            </table>
+              <input class ="btn btn-success" type="submit" value="Ajouter">
+            </form>
+        </div>
+
+</div>
+
+
+
+</body>
+</html>
+
+
+<script>
+
+changeTypeCompte()
+
+btnAddCompte.onclick=function()
+{
+  addFormCompte.style.display="block";
+}
+
+const typeCompte = document.querySelector('input[name="typeCompte"]:checked')
+
+if(typeCompte)
+{
+  changeTypeCompte(typeCompte.value)
+}
+
+function changeTypeCompte(type)
+{
+	inputPseudonyme.style.display="none";
+	inputNom.style.display="none";
+	inputPrenom.style.display="none";
+
+	for(b of document.getElementsByClassName("inputPirate"))
+	{
+		b.required=false;
+	}
+	for(b of document.getElementsByClassName("inputClient"))
+	{
+		b.required=false;
+	}
+
+
+	if(type=="Pirate")
+	{
+		inputPseudonyme.style.display="table-row";
+		for(b of document.getElementsByClassName("inputPirate"))
+		{
+			b.required=true;
+		}
+	}
+	else if(type=="Client")
+	{
+		inputNom.style.display="table-row";
+		inputPrenom.style.display="table-row";
+		for(b of document.getElementsByClassName("inputClient"))
+		{
+			b.required=true;
+		}
+	}
+}
+
+</script>
