@@ -11,12 +11,18 @@
 		<spring.version>6.0.6</spring.version>
 	</properties>
 	
-	
 	<dependencies>
 		<!-- SPRING CONTEXT -->
 		<dependency>
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-context</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+		
+		<!-- SPRING WEB MVC -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-webmvc</artifactId>
 		    <version>${spring.version}</version>
 		</dependency>
 		
@@ -69,6 +75,36 @@
 		    <artifactId>mysql-connector-java</artifactId>
 		    <version>8.0.32</version>
 		    <scope>runtime</scope>
+		</dependency>
+		
+		
+		<!-- JSTL -->
+		<dependency>
+		    <groupId>jakarta.servlet.jsp.jstl</groupId>
+		    <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+		    <version>3.0.0</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.glassfish.web</groupId>
+		    <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+		    <version>3.0.0</version>
+		</dependency>
+		
+		
+		<!-- Validations -->
+		<dependency>
+		    <groupId>org.hibernate.validator</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		    <version>8.0.0.Final</version>
+		</dependency>
+		
+		
+		<!-- Jackson : Spring puisse sérialiser en JSON -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>2.14.2</version>
 		</dependency>
 	</dependencies>
 </project>
