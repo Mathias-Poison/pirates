@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import pirate.model.Capitaine;
 import pirate.model.Client;
 import pirate.model.Compte;
+import pirate.model.Mission;
 
 public interface IDAOCompte extends JpaRepository<Compte, Integer>{
 
@@ -19,4 +20,6 @@ public interface IDAOCompte extends JpaRepository<Compte, Integer>{
 	
 	@Query("select c from Client c")
 	public List<Client> findAllClient();
+	
+	
 }

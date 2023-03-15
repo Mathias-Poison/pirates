@@ -21,7 +21,7 @@ public class Bateau {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@JsonView(Views.Bateau.class)
+	@JsonView(Views.Common.class)
 	private Integer id;
 	
 	@Column(name="Nom")

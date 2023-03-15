@@ -16,7 +16,7 @@ import pirate.controller.api.Views;
 public class Enchere {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@JsonView({Views.Enchere.class, Views.Capitaine.class, Views.Client.class})
+	@JsonView(Views.Common.class)
 	private Integer id;
 	@JsonView({Views.Enchere.class, Views.Capitaine.class, Views.Client.class})
 	private double prix;

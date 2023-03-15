@@ -26,6 +26,7 @@ import pirate.model.Admin;
 import pirate.model.Capitaine;
 import pirate.model.Client;
 import pirate.model.Compte;
+import pirate.model.Mission;
 import pirate.request.CompteRequest;
 import pirate.response.CompteResponse;
 
@@ -35,45 +36,44 @@ import pirate.response.CompteResponse;
 public class CompteApiController {
 	@Autowired
 	private IDAOCompte daoCompte;
-	
-	
+
+
 	//Liste des comptes
 	@GetMapping
 	@JsonView(Views.Compte.class)
 	public List<Compte> findAll() {
 		return this.daoCompte.findAll();
 	}
-	
+
 	//liste des capitaines 
 	@GetMapping("/capitaine")
 	@JsonView(Views.Compte.class)
 	public List<Capitaine> findAllCapitaine() {
 		return this.daoCompte.findAllCapitaine();
 	}
-	
-	
+
+
 	//liste des clients
 	@GetMapping("/client")
 	@JsonView(Views.Compte.class)
 	public List<Client> findAllClient() {
 		return this.daoCompte.findAllClient();
 	}
-	
-	
+
 	
 	//Find by Id
 	@GetMapping("/{id}")
 	public CompteResponse findById(@PathVariable int id) {
-		
+
 		Compte compte = this.daoCompte.findById(id).orElseThrow(CompteNotFoundException::new);
 		CompteResponse resp = new CompteResponse();
-		
+
 		BeanUtils.copyProperties(compte, resp);
-		
+
 		return resp;
 	}
-	
-	
+
+
 	//find by login et password(pour se connecter)
 	@GetMapping("/connexion")
 	public Compte findByLoginAndPassword (@Valid @RequestParam String login, @Valid @RequestParam String password, BindingResult result)
@@ -83,9 +83,9 @@ public class CompteApiController {
 		Compte compte = this.daoCompte.findByLoginAndPassword(login, password);		
 		return compte;
 	}
-	
-	
-	
+
+
+
 	//Ajouter 
 	@PostMapping
 	@JsonView(Views.Compte.class)
@@ -93,9 +93,9 @@ public class CompteApiController {
 		if (result.hasErrors()) {
 			throw new CompteBadRequestException();
 		}
-		
+
 		Compte compte = null;
-		
+
 		if(compteRequest.getType_compte().equals("capitaine"))
 		{
 			compte = new Capitaine();
@@ -106,16 +106,16 @@ public class CompteApiController {
 		else if (compteRequest.getType_compte().equals("admin")) {
 			compte = new Admin();
 		}
-		
+
 		else {
 			throw new CompteBadRequestException();			
 		}
-		
+
 		BeanUtils.copyProperties(compteRequest, compte);
 		return this.daoCompte.save(compte);
 	}
-	
-	
+
+
 	//Modifier
 	@PutMapping("/{id}")
 	@JsonView(Views.Compte.class)
@@ -123,29 +123,29 @@ public class CompteApiController {
 		if (result.hasErrors()) {
 			throw new CompteBadRequestException();
 		}
-		
+
 		Compte compte = this.daoCompte.findById(id).orElseThrow(CompteNotFoundException::new);
-		
+
 		BeanUtils.copyProperties(compteRequest, compte);
-		
+
 		return this.daoCompte.save(compte);
 	}
-	
-	
+
+
 	//Suprrimer
 	@DeleteMapping("/{id}")
 	public boolean deleteById(@PathVariable int id) {
 		try {
-			
+
 			if (!this.daoCompte.existsById(id)) {
 				throw new CompteNotFoundException();
 			}
-			
+
 			this.daoCompte.deleteById(id);
-			
+
 			return true;
 		}
-		
+
 		catch (Exception e) {
 			return false;
 		}

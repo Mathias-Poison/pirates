@@ -21,7 +21,7 @@ public class Compte {
 		
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@JsonView(Views.Compte.class)
+	@JsonView(Views.Common.class)
 	protected Integer id;
 	
 	@Column(length = 3,nullable = false)

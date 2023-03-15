@@ -2,6 +2,7 @@ package pirate.controller.api;
 
 import java.util.List;
 
+import org.hibernate.Hibernate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
@@ -13,11 +14,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import pirate.dao.IDAOMission;
 import pirate.exception.MissionBadRequestException;
@@ -37,10 +38,36 @@ public class MissionApiController {
 	//Liste des missions
 	@GetMapping
 	@JsonView(Views.Mission.class)
+	@Transactional
 	public List<Mission> findAll() {
-		return this.daoMission.findAll();
+		List <Mission> mission= daoMission.findAll();
+		
+		for(Mission m : mission)
+		{
+			Hibernate.initialize(m.getEncheres());
+		}		
+		return mission;
 	}
-	
+	//liste des missions par un capitaine
+		@GetMapping("/capitaine/{capitaine_id}")
+		@JsonView(Views.Mission.class)
+		public List<Mission> findAllMissionByCapitaineId(@PathVariable int capitaine_id) {
+			return this.daoMission.findAllMissionByCapitaineId(capitaine_id);
+		}
+
+		//liste des missions par un client
+		@GetMapping("/client/{client_id}")
+		@JsonView(Views.Mission.class)
+		public List<Mission> findAllMissionByClientId(@PathVariable int client_id) {
+			return this.daoMission.findAllMissionByCapitaineId(client_id);
+		}
+
+		//liste des missions par un client
+		@GetMapping("/bateau/{bateau_id}")
+		@JsonView(Views.Mission.class)
+		public List<Mission> findAllMissionByBateauId(@PathVariable int bateau_id) {
+			return this.daoMission.findAllMissionByBateauId(bateau_id);
+		}
 	
 	//Find by Id
 	@GetMapping("/{id}")
@@ -75,6 +102,7 @@ public class MissionApiController {
 	//Modifier
 	@PutMapping("/{id}")
 	@JsonView(Views.Mission.class)
+	@Transactional
 	public Mission edit(@PathVariable int id, @RequestBody @Valid MissionRequest missionRequest, BindingResult result) {
 		if (result.hasErrors()) {
 			throw new MissionBadRequestException();
@@ -84,7 +112,9 @@ public class MissionApiController {
 		
 		BeanUtils.copyProperties(missionRequest, mission);
 		
-		return this.daoMission.save(mission);
+		mission=this.daoMission.save(mission);
+		Hibernate.initialize(mission.getEncheres());
+		return mission;
 	}
 	
 	

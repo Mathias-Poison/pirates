@@ -44,21 +44,26 @@ public class Mission {
 	@JsonView(Views.Mission.class)
 	private int difficulte;
 	
+	@JsonView(Views.Mission.class)
 	private LocalDate date;
 	
 	@ManyToOne
 	@JoinColumn(name = "capitaine")
+	@JsonView(Views.Mission.class)
 	private Capitaine capitaine;
 	
 	@ManyToOne
 	@JoinColumn(name = "client")
+	@JsonView(Views.Mission.class)
 	private Client client;
 	
 	@OneToMany(mappedBy = "mission")
+	@JsonView(Views.Mission.class)
 	private List<Enchere> encheres;
 	
 	@ManyToOne
 	@JoinColumn(name = "bateau")
+	@JsonView(Views.Mission.class)
 	private Bateau bateau;
 	
 	@Column(name="statut",columnDefinition = "ENUM('EnAttente','EnCours','Terminee')")
