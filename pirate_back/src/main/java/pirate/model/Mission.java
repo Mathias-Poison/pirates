@@ -25,7 +25,7 @@ public class Mission {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@JsonView(Views.Mission.class)
+	@JsonView({Views.Mission.class,Views.Capitaine.class})
 	private Integer id;
 	
 	@Column(name="libelle",nullable = false,columnDefinition = "VARCHAR(50)")
