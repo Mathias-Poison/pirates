@@ -1,57 +1,80 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
-
-
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Liste des Comptes</title>
+	<base href="/pirate_front/" />
+	<title>Préparez votre bateau</title>
 </head>
 <body>
+	<h2>préparer votre bateau pour la mission mission.libelle</h2>
 
-<h1>bateau</h1>
-<form>
-  <h2>Options du bateau :</h2>
-  
-  <h3>Armement :</h3>
-  <label>
-    <input type="radio" name="armement" value="aucun">
-    Aucun
-  </label>
-  <br>
-  <label>
-    <input type="radio" name="armement" value="léger">
-    Léger
-  </label>
-  <br>
-  <label>
-    <input type="radio" name="armement" value="moyen">
-    Moyen
-  </label>
-  <br>
-  <label>
-    <input type="radio" name="armement" value="lourd">
-    Lourd
-  </label>
-  
-  <h3>Cargaison :</h3>
-  <label>
-    <input type="radio" name="cargaison" value="petite">
-    Petite
-  </label>
-  <br>
-  <label>
-    <input type="radio" name="cargaison" value="moyenne">
-    Moyenne
-  </label>
-  <br>
-  <label>
-    <input type="radio" name="cargaison" value="grande">
-    Grande
-  </label>
-  
-  <br><br>
-  <input type="submit" value="Envoyer">
-</form>
+	<!--  Selection bateau -->
+	<label for="choixBateau">Choisir un bateau:</label>
+	<select id="choixBateau">
+		<option value="">----</option>
+		<option value="Usain boat">Usain boat</option>
+		<option value="Black perle">Black perle</option>
+		<option value="Galley">Galley</option>
+	</select>
+
+	<!--  Selection Cargaison (caché au début) -->
+	<div id="selection-cargo" style="display:none">
+		<label for="choixCargo">Choisir cargaison:</label>
+		<select id="choixCargo">
+			<option value="">----</option>
+			<option value="petite">petite</option>
+			<option value="moyenne">moyenne</option>
+			<option value="grande">grande</option>
+		</select>
+    </div>
+
+		<!-- Selection Armement (caché au début) -->
+    <div id="selection-arm" style="display:none">
+		<label for="choixArm">Chosir armement:</label>
+		<select id="choixArm">
+			<option value="">----</option>
+			<option value="Leger">Leger</option>
+			<option value="Moyen">Moyen</option>
+			<option value="Lourd">Lourd</option>
+		</select>
+    </div>
+
+    <!-- boutton afficher bateaux et en creer un nouveau -->
+    	<div id="buttons">
+    		<a href="bateau/all">Afficher mes bateaux</a><br>
+    		<a href="bateau/ajouter">Créer un bateau</a>
+    	</div>
+		<div id="button-ok" style="display:none"">
+    		<a href="blanck">Prenons la mer !</a><br>
+    	</div>
+
+	<script>
+		document.getElementById("choixBateau").addEventListener("change", function() {
+			if (this.value != "") {
+				document.getElementById("selection-cargo").style.display = "block";
+        document.getElementById("buttons").style.display = "none";
+			} else {
+				document.getElementById("selection-cargo").style.display = "none";
+        document.getElementById("selection-arm").style.display = "none";
+        document.getElementById("buttons").style.display = "block";
+			}
+		});
+
+   		 document.getElementById("selection-cargo").addEventListener("change", function() {
+			if (this.value != "") {
+				document.getElementById("selection-arm").style.display = "block";
+				
+			} else {
+				document.getElementById("selection-arm").style.display = "none";
+			}
+		});
+	
+   		document.getElementById("selection-arm").addEventListener("change", function() {
+			if (this.value != "") {
+				document.getElementById("button-ok").style.display = "block";
+				
+			} 
+		});
+	</script>
+
 </body>
+</html>
