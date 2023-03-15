@@ -1,15 +1,13 @@
 <meta charset="utf-8">
 <style>
 .topbar {
-    background-color: #fff;
+    background-color: #707271;;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     height: 60px;
-    padding: 0 20px;
 }
-
 .topbar ul {
   display: flex;
   list-style: none;
@@ -26,10 +24,10 @@
 }
 
 .topbar a {
-  color: #333;
-  font-size: 16px;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
+    color: #f5eded;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
 }
 
 .topbar a:hover {
@@ -67,13 +65,17 @@
   }
 }
 
+#logo{
+display:flex;
+}
+
 .sidebar {
   background-color: #f7f7f7;
   width: 200px;
   height: 100%;
   position: fixed;
   left: 0;
-  top: 100;
+  top: 70;
 }
 
 .sidebar-nav ul {
@@ -101,18 +103,20 @@
 }
 
 </style>
+
 <title>Menu principal</title>
 
 
 <div class="topbar">
-<nav class="topbar">
-  <ul>
-    <li><a href="#">Mes missions</a></li>
-    <li><a href="#">Mes enchères</a></li>
-    <li><a href="#">Mes bateaux</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</nav>
+	<div class ="logo"><img src="C:/Users/RyteNucker/Desktop/workspaceSopra…irates/pirate_front/src/main/webapp/img/logob.png"></div>
+		<nav class="topbar">
+		  <ul>
+		    <li><a href="#">Mes missions</a></li>
+		    <li><a href="enchere.html">Mes enchères</a></li>
+		    <li><a href="bateau.jsp">Mes bateaux</a></li>
+		    <li><a href="#">Contact</a></li>
+		  </ul>
+		</nav>
 </div>
 
 <div class="sidebar">
@@ -124,4 +128,3 @@
     </ul>
   </nav>
 </div>
-
