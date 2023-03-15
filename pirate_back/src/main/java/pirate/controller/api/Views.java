@@ -6,9 +6,11 @@ public interface Views {
 	
 	public static interface Compte extends Common {}
 	
-	public static interface Capitaine extends Common {}
+	public static interface Capitaine extends Compte {}
 	
-	public static interface Client extends Common {}
+	public static interface Client extends Compte {}
+	
+	public static interface Admin extends Compte {}
 	
 	public static interface Enchere extends Common {}
 	

@@ -19,7 +19,7 @@ public class Client extends Compte{
 	private String prenom;
 	
 	@OneToMany(mappedBy = "client")
-	@JsonView(Views.Client.class)
+	//@JsonView(Views.Client.class)
 	private List<Mission> missions;
 	
 	public Client() {

@@ -19,11 +19,11 @@ public class Capitaine extends Compte {
 	@JsonView(Views.Capitaine.class)
 	private int tauxReussite ;
 	
-	@JsonView(Views.Capitaine.class)
+	//@JsonView(Views.Capitaine.class)
 	@OneToMany(mappedBy = "capitaine")
 	private List<Mission> missions;
 	
-	@JsonView(Views.Capitaine.class)
+	//@JsonView(Views.Capitaine.class)
 	@OneToMany(mappedBy = "capitaine")
 	private List<Enchere> encheres;
 	
