@@ -3,6 +3,8 @@ package pirate.model;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -15,6 +17,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import pirate.controller.api.Views;
 
 @Entity
 @Table(name="mission")
@@ -22,14 +25,23 @@ public class Mission {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@JsonView(Views.Mission.class)
 	private Integer id;
-	@Column(name="nom",nullable = false,columnDefinition = "VARCHAR(50)")
+	
+	@Column(name="libelle",nullable = false,columnDefinition = "VARCHAR(50)")
+	@JsonView(Views.Mission.class)
 	private String libelle;
+	
 	@Column( length = 3, nullable = false)
+	@JsonView(Views.Mission.class)
 	private int duree;
+	
 	@Column(nullable = false,columnDefinition = "VARCHAR(50)")
+	@JsonView(Views.Mission.class)
 	private String lieu;
+	
 	@Column(nullable = false, length = 3)
+	@JsonView(Views.Mission.class)
 	private int difficulte;
 	
 	private LocalDate date;
@@ -51,6 +63,7 @@ public class Mission {
 	
 	@Column(name="statut",columnDefinition = "ENUM('EnAttente','EnCours','Terminee')")
 	@Enumerated(EnumType.STRING)
+	@JsonView(Views.Mission.class)
 	private Statut statut;
 	
 	public Mission() {}

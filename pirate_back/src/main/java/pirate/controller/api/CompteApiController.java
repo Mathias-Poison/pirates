@@ -73,6 +73,7 @@ public class CompteApiController {
 		return resp;
 	}
 	
+	
 	//find by login et password(pour se connecter)
 	@GetMapping("/connexion")
 	public Compte findByLoginAndPassword (@Valid @RequestParam String login, @Valid @RequestParam String password, BindingResult result)
@@ -93,29 +94,25 @@ public class CompteApiController {
 			throw new CompteBadRequestException();
 		}
 		
+		Compte compte = null;
+		
 		if(compteRequest.getType_compte().equals("capitaine"))
 		{
-			Capitaine compte = new Capitaine();
-			BeanUtils.copyProperties(compteRequest, compte);
-			return this.daoCompte.save(compte);
-			
+			compte = new Capitaine();
 		}
 		else if(compteRequest.getType_compte().equals("client")) {
-			Client compte = new Client();
-			BeanUtils.copyProperties(compteRequest, compte);
-			return this.daoCompte.save(compte);
+			compte = new Client();
 		}
 		else if (compteRequest.getType_compte().equals("admin")) {
-			Admin compte = new Admin();
-			BeanUtils.copyProperties(compteRequest, compte);
-			return this.daoCompte.save(compte);
-		}
-		else {
-			new CompteBadRequestException();
+			compte = new Admin();
 		}
 		
-		return null;
-			
+		else {
+			throw new CompteBadRequestException();			
+		}
+		
+		BeanUtils.copyProperties(compteRequest, compte);
+		return this.daoCompte.save(compte);
 	}
 	
 	

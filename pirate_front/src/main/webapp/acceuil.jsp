@@ -23,7 +23,6 @@
   cursor:pointer;
 }
 
-
 </style>
 
 <form >
@@ -36,14 +35,13 @@
     <table >
       <tr><td>Identifiant :</td><td><input required type="text" placeholder="Saisir votre identifiant"></td></tr>
       <tr><td>Mot de passe :</td><td><input required type="password" placeholder="**********"></td></tr>
-      <tr><td colspan="2" align="center">Pas encore inscrit? <a id="lienInscription" href ="?inscription">Inscrivez-vous!</a></td></tr>
+      <tr><td colspan="2" align="center">Pas encore inscrit? <ins id="lienInscription">Inscrivez-vous!</ins></td></tr>
       <tr><td></td><td id="inscription"><input  class="new" name="Compte" type="radio" value="Pirate">Pirate <input class="new" name="Compte" value="Client" type="radio">Client</td></tr>
 
     </table>
   </div>
 </div>
 </form>
-
 
 <script>
 lienInscription.onclick = show;
@@ -53,6 +51,4 @@ function show()
   console.log("Show");
   inscription.style.display="block"
 }
-
-
 </script>

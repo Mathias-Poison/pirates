@@ -2,6 +2,8 @@ package pirate.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -11,6 +13,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+import pirate.controller.api.Views;
 
 
 @Entity
@@ -18,20 +21,24 @@ public class Bateau {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@JsonView(Views.Bateau.class)
 	private Integer id;
 	
 	@Column(name="Nom")
+	@JsonView(Views.Bateau.class)
 	private String nom;
 	
 	@Column(name="cargaison",columnDefinition = "ENUM('petite','moyenne','grande')")
 	@Enumerated(EnumType.STRING)
+	@JsonView(Views.Bateau.class)
 	private Cargaison cargaison;
 	
 	@Column(name="armement",columnDefinition = "ENUM('leger','moyen','lourd')")
-	@Enumerated(EnumType.STRING)	
+	@Enumerated(EnumType.STRING)
+	@JsonView(Views.Bateau.class)
 	private Armement armement;
 	
-	@OneToMany(mappedBy ="bateau" )
+	@OneToMany(mappedBy ="bateau" )	
 	private List<Mission> missions;
 	
 	public Bateau() {
