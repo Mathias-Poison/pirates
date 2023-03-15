@@ -69,6 +69,13 @@ public class CompteApiController {
 			return this.daoCompte.findAllAdmin();
 		}
 	
+	//liste des admins
+		@GetMapping("/admin")
+		@JsonView(Views.Client.class)
+		public List<Admin> findAllAdmin() {
+			return this.daoCompte.findAllAdmin();
+		}
+	
 	
 	//Find by Id
 	@GetMapping("/{id}")
