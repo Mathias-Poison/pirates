@@ -26,13 +26,14 @@
 
 </style>
 <form >
+<title>Enchere</title>
 
 <div id="base">
   <div id = "enchere">
     <table border >
       <thead>
          <tr>
-                <th>Numéro enchère</th>
+                <th>Num�ro ench�re</th>
                 <th>Client</th>
                 <th>Montant de base</th>
                 <th>Montant enchéri</th>
@@ -61,7 +62,7 @@
            <td>11/11/11</td>
            <td>11 800PO</td>
            <td>11/11/11</td>
-           <td><p id="timer2">Fin dans x heures</td>
+           <td><p id="timer2">00:00</td>
          </tr>
        </tbody>
 
@@ -89,7 +90,7 @@
     // Arrêter le timer lorsque le temps est écoulé
     if (timerDuration1 < 0) {
       clearInterval(timerInterval1);
-      timerElement1.innerHTML = "Temps écoulé !";
+      timerElement1.innerHTML = "Temps �coul� !";
     }
   }
 
@@ -102,7 +103,7 @@
     // Arrêter le timer lorsque le temps est écoulé
     if (timerDuration2 < 0) {
       clearInterval(timerInterval2);
-      timerElement2.innerHTML = "Temps écoulé !";
+      timerElement2.innerHTML = "Temps �coul� !";
     }
   }
 
