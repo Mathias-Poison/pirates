@@ -35,6 +35,10 @@ public class Compte {
 	@Column(name="password",length = 125,nullable = false)
 	protected String password;
 	
+	@Column(name = "type_compte", insertable = false, updatable = false)
+	@JsonView(Views.Compte.class)
+	protected String typeCompte;
+	
 	public Compte() {
 		
 	}
@@ -76,6 +80,14 @@ public class Compte {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getTypeCompte() {
+		return typeCompte;
+	}
+
+	public void setTypeCompte(String typeCompte) {
+		this.typeCompte = typeCompte;
 	}
 
 	@Override
