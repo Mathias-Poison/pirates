@@ -27,9 +27,7 @@ public class Capitaine extends Compte {
 	@OneToMany(mappedBy = "capitaine")
 	private List<Enchere> encheres;
 	
-	public Capitaine() {
-
-	}
+	public Capitaine() {}
 	
 	public Capitaine(int age,String login, String password, String pseudonyme, int tauxReussite) {
 		super(age, login, password);

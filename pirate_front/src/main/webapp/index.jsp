@@ -36,7 +36,6 @@
     <table >
       <tr><td>Identifiant :</td><td><input name="login" required type="text" placeholder="Saisir votre identifiant"></td></tr>
       <tr><td>Mot de passe :</td><td><input name="password" required type="password" placeholder="**********"></td></tr>
-       <tr><td><input class ="btn btn-success" type="submit" value="Se connecter"></td></tr>
       <tr><td colspan="2" align="center">Pas encore inscrit? <a id="lienInscription" href ="/formulaireinscription">Inscrivez-vous!</a></td></tr>
 
     </table>

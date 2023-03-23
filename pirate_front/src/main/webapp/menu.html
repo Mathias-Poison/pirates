@@ -1,12 +1,21 @@
 <meta charset="utf-8">
 <style>
+body
+{
+  background-color:#F4EFE7;
+}
 .topbar {
-    background-color: #707271;;
+    background-color: #3e3737;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     justify-content: space-between;
+    flex-direction: row;
     align-items: center;
-    height: 60px;
 }
 .topbar ul {
   display: flex;
@@ -70,7 +79,7 @@ display:flex;
 }
 
 .sidebar {
-  background-color: #f7f7f7;
+  background-color: #3e3737;
   width: 200px;
   height: 100%;
   position: fixed;
@@ -89,7 +98,7 @@ display:flex;
 }
 
 .sidebar-nav a {
-  color: #333;
+  color: #fff;
   text-decoration: none;
   font-size: 1.2rem;
   padding: 0.5rem;
@@ -102,14 +111,26 @@ display:flex;
   color: #fff;
 }
 
+#logo{
+width:100;
+}
+
+.feed {
+    width: 700px;
+    height: 1500px;
+    background-color: #fff;
+    position: fixed;
+    top: 100px;
+    left: 400px;
+}
 </style>
 
 <title>Menu principal</title>
 
 
 <div class="topbar">
-	<div class ="logo"><img src="C:/Users/RyteNucker/Desktop/workspaceSopra…irates/pirate_front/src/main/webapp/img/logob.png"></div>
-		<nav class="topbar">
+	<div class ="logo"></div>
+		<nav class="topbar"><img id="logo" src="img/logob.png">
 		  <ul>
 		    <li><a href="#">Mes missions</a></li>
 		    <li><a href="enchere.html">Mes enchères</a></li>
@@ -118,6 +139,8 @@ display:flex;
 		  </ul>
 		</nav>
 </div>
+
+<div class="feed"></div>
 
 <div class="sidebar">
   <nav class="sidebar-nav">

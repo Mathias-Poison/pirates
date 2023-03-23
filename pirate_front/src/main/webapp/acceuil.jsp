@@ -30,7 +30,7 @@
 
 <div id="base">
   <div id="title">
-    <p >Relationship.img</p>
+    <p >Relationship.imgrefe</p>
   </div>
   <div id = "formulaire">
     <table >
