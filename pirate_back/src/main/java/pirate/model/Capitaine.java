@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
@@ -16,6 +17,7 @@ public class Capitaine extends Compte {
 	@JsonView(Views.Capitaine.class)
 	private String pseudonyme ;
 	
+	@Column(name="taux_reussite", nullable=false)
 	@JsonView(Views.Capitaine.class)
 	private int tauxReussite ;
 	
@@ -33,7 +35,7 @@ public class Capitaine extends Compte {
 		super(age, login, password);
 		
 		this.pseudonyme = pseudonyme;
-		this.tauxReussite = tauxReussite;
+		//this.tauxReussite = tauxReussite;
 	}
 
 	public String getPseudonyme() {
@@ -54,8 +56,10 @@ public class Capitaine extends Compte {
 
 	@Override
 	public String toString() {
-		return "Capitaine [pseudonyme=" + pseudonyme + ", tauxReussite=" + tauxReussite + ", id=" + id + ", age=" + age
-				+ ", login=" + login + ", mdp=" + password + ", pseudo=" + "]";
+		return "Capitaine [pseudonyme=" + pseudonyme + ", tauxReussite=" + tauxReussite + ", missions=" + missions
+				+ ", encheres=" + encheres + "]";
 	}
+
+	
 	
 }
