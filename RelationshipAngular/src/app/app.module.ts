@@ -8,7 +8,6 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { PirateMenuComponent } from './pirate-menu/pirate-menu.component';
 import { MissionsPirateComponent } from './missions-pirate/missions-pirate.component';
-import { EncherePirateComponent } from './enchere-pirate/enchere-pirate.component';
 import { EncherirComponent } from './encherir/encherir.component';
 
 @NgModule({
@@ -19,7 +18,6 @@ import { EncherirComponent } from './encherir/encherir.component';
     MainMenuComponent,
     PirateMenuComponent,
     MissionsPirateComponent,
-    EncherePirateComponent,
     EncherirComponent
   ],
   imports: [
