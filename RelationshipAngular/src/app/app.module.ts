@@ -9,6 +9,7 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
 import { PirateMenuComponent } from './pirate-menu/pirate-menu.component';
 import { MissionsPirateComponent } from './missions-pirate/missions-pirate.component';
 import { EncherirComponent } from './encherir/encherir.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { EncherirComponent } from './encherir/encherir.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
