@@ -10,6 +10,9 @@ import { PirateMenuComponent } from './pirate-menu/pirate-menu.component';
 import { MissionsPirateComponent } from './missions-pirate/missions-pirate.component';
 import { EncherirComponent } from './encherir/encherir.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ConnexionHttpService } from './connexion/connexion-http.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CompteHttpService } from './compte-http.service';
 
 @NgModule({
   declarations: [
@@ -19,15 +22,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MainMenuComponent,
     PirateMenuComponent,
     MissionsPirateComponent,
-    EncherirComponent
+    EncherirComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ConnexionHttpService,HttpClient,CompteHttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
