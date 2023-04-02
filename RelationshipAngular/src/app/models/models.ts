@@ -6,7 +6,7 @@ export class Compte {
     password: string;
     typeCompte: string;
 
-    constructor(id: number, age: number, login: string, password: string, typeCompte: string) {
+    constructor(id: number, age?: number, login?: string, password?: string, typeCompte?: string) {
         this.id = id;
         this.age = age;
         this.login = login;
