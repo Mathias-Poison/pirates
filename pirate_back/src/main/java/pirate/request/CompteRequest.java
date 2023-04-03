@@ -1,5 +1,8 @@
 package pirate.request;
 
+import org.springframework.lang.Nullable;
+
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 
@@ -15,11 +18,11 @@ public class CompteRequest {
 	protected String type_compte;
 	@NotBlank
 	protected String email;
-	@NotBlank
+	@Nullable
 	protected String pseudonyme;
-	@NotBlank
+	@Nullable
 	protected String nom;
-	@NotBlank
+	@Nullable
 	protected String prenom;
 	
 	
