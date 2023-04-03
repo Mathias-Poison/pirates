@@ -51,11 +51,11 @@
                             L'email est invalide
                         </span>
                     </tr>
-
                     <tr>
                         <td>Password :</td>
                         <td> <input required type="password" class="form-control" id="password"
-                                formControlName="password" placeholder="saisir le mot de passe"></td>
+                                formControlName="password" placeholder="saisir le mot de passe">min 8 carac, 1 maj ou 1 carac spécial
+                            </td>
                         <span *ngIf="piratePasswordCtrl.dirty && piratePasswordCtrl?.hasError('required')"
                             class="text-danger">
                             Le mot de passe est obligatoire
@@ -68,6 +68,10 @@
                     <td>Confirmation du password :</td>
                     <td> <input required type="password" class="form-control" id="passwordConfirm"
                             formControlName="passwordConfirm" placeholder="saisir le mot de passe"></td>
+                            <span *ngIf="piratePasswordCtrl.value != piratePasswordConfirmCtrl.value"
+                            class="text-danger">
+                            Le mot de passe et sa confirmation ne correspondent pas
+                        </span>
                     <tr>
                         <td>Date de naissance </td>
                         <td><input required type="date" class="form-control" id="date" formControlName="date"></td>
@@ -85,7 +89,8 @@
                         </span>
                     </tr>
                 </table>
-                <input class="btn btn-success" type="submit" value="S'inscrire">
+                <input class="btn btn-success" type="submit" value="S'inscrire Pirate" [disabled]="pirateInscriptionForm.invalid" 
+                (click)="addPirate()">
 
             </div>
 
@@ -139,10 +144,14 @@
                     <td>Confirmation du password :</td>
                     <td> <input required type="password" class="form-control" id="passwordConfirm"
                             formControlName="passwordConfirm" placeholder="saisir le mot de passe"></td>
+                            <span *ngIf="clientPasswordCtrl.value != clientPasswordConfirmCtrl.value"
+                            class="text-danger">
+                            Le mot de passe et sa confirmation ne correspondent pas
+                        </span>
                     <tr>
                         <td>Date de naissance </td>
                         <td><input required type="date" class="form-control" id="date" formControlName="date"></td>
-                        <span *ngIf="clientDateCtrl.dirty && clientDateCtrl?.hasError('pattern')" class="text-danger">
+                        <span *ngIf="clientDateCtrl.dirty && clientDateCtrl?.hasError('required')" class="text-danger">
                             La date de naissance est obligatoire
                         </span>
                     </tr>
@@ -165,7 +174,7 @@
                         </span>
                     </tr>
                 </table>
-                <input class="btn btn-success" type="submit" value="S'inscrire">
+                <input class="btn btn-success" type="submit" value="S'inscrire Client" [disabled]="clientInscriptionForm.invalid">
 
             </div>
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Capitaine, Compte } from '../models/models';
 
 
 @Component({
@@ -8,6 +9,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./inscription.component.css']
 })
 export class InscriptionComponent implements OnInit {
+
+  //pirateInscriptionForm: Capitaine =null;
 
   pirateInscriptionForm: FormGroup;
   pirateLoginCtrl: FormControl;
@@ -25,6 +28,8 @@ export class InscriptionComponent implements OnInit {
   clientNomCtrl: FormControl;
   clientPrenomCtrl: FormControl;
   clientDateCtrl: FormControl;
+
+
 
   constructor(private formBuilder: FormBuilder) {
 
@@ -95,4 +100,20 @@ export class InscriptionComponent implements OnInit {
     }
 
   }
+
+  addClient(): void {
+    //this.clientInscriptionForm = new Client();
+  }
+
+  addPirate(): void {
+    this.pirateInscriptionForm.value = new Capitaine();
+  }
+
+  // addAccount(account: any): Promise<any> {
+  //   return new Promise<any>((resolve, reject) => {
+  //     this.db.list('/accounts').push(account)
+  //       .then(res => resolve(res), err => reject(err));
+  //   });
+  // }
+
 }
