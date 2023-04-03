@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CompteHttpService } from '../compte-http.service';
 import { Compte } from '../models/models';
 import { LoginService } from '../login.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { first } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-connexion',
@@ -13,27 +15,35 @@ export class ConnexionComponent implements OnInit{
 
   
   loginForm: FormGroup;
+  usernameCtrl:FormControl;
+  passwordCtrl: FormControl;
   submitted: boolean=false;
-  loading: boolean=false;
-  constructor(private loginService : LoginService, private formBuilder: FormBuilder){
+  constructor(private loginService : LoginService, private formBuilder: FormBuilder, private router: Router){
     
   } 
 
   ngOnInit() {
+
+    this.usernameCtrl=this.formBuilder.control('', Validators.required);
+    this.passwordCtrl=this.formBuilder.control('', Validators.required);
     this.loginForm = this.formBuilder.group({
-        username: ['', Validators.required],
-        password: ['', Validators.required]
+        username: this.usernameCtrl,
+        password: this.passwordCtrl
     });
-  }
-  seConnecter() {
-    this.loginService.authentifier(this.loginForm.value.username,this.loginForm.value.password);
     }
   
-    onSubmit() {
+  
+  onSubmit() {
       this.submitted = true
       if (this.loginForm.invalid) {
           return;
       }
-      this.loading = true;
+     
+      this.loginService.authentifier(this.loginForm.get('username').value,this.loginForm.get('password').value)
+      .subscribe(
+        compte => {
+          console.log(compte); // Utiliser la valeur de compte ici
+          this.router.navigate(['/pirate']);
+        });
     }
 }
