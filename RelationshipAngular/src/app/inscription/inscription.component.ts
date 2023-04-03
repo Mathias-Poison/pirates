@@ -18,7 +18,7 @@ export class InscriptionComponent implements OnInit {
   piratePasswordCtrl: FormControl;
   piratePasswordConfirmCtrl: FormControl;
   piratePseudonymeCtrl: FormControl;
-  pirateDateCtrl: FormControl;
+  pirateAgeCtrl: FormControl;
 
   clientInscriptionForm: FormGroup;
   clientLoginCtrl: FormControl;
@@ -27,7 +27,7 @@ export class InscriptionComponent implements OnInit {
   clientPasswordConfirmCtrl: FormControl;
   clientNomCtrl: FormControl;
   clientPrenomCtrl: FormControl;
-  clientDateCtrl: FormControl;
+  clientAgeCtrl: FormControl;
 
 
 
@@ -41,7 +41,7 @@ export class InscriptionComponent implements OnInit {
     this.piratePasswordCtrl = this.formBuilder.control('', [Validators.required, Validators.minLength(8), Validators.pattern('^.*[A-Z]+.*$')]);
     this.piratePasswordConfirmCtrl = this.formBuilder.control('',);
     this.piratePseudonymeCtrl = this.formBuilder.control('', Validators.required);
-    this.pirateDateCtrl = this.formBuilder.control('', Validators.required);
+    this.pirateAgeCtrl = this.formBuilder.control('', Validators.required);
 
     this.clientLoginCtrl = this.formBuilder.control('', Validators.required);
     this.clientEmailCtrl = this.formBuilder.control('', [Validators.required, Validators.email]);
@@ -49,7 +49,7 @@ export class InscriptionComponent implements OnInit {
     this.clientPasswordConfirmCtrl = this.formBuilder.control('',);
     this.clientNomCtrl = this.formBuilder.control('', Validators.required);
     this.clientPrenomCtrl = this.formBuilder.control('', Validators.required);
-    this.clientDateCtrl = this.formBuilder.control('', Validators.required);
+    this.clientAgeCtrl = this.formBuilder.control('', Validators.required);
 
     this.pirateInscriptionForm = this.formBuilder.group({
       login: this.pirateLoginCtrl,
@@ -57,7 +57,7 @@ export class InscriptionComponent implements OnInit {
       password: this.piratePasswordCtrl,
       passwordConfirm: this.piratePasswordConfirmCtrl,
       pseudonyme: this.piratePseudonymeCtrl,
-      date: this.pirateDateCtrl
+      age: this.pirateAgeCtrl
 
     });
 
@@ -68,7 +68,7 @@ export class InscriptionComponent implements OnInit {
       passwordConfirm: this.clientPasswordConfirmCtrl,
       nom: this.clientNomCtrl,
       prenom: this.clientPrenomCtrl,
-      date: this.clientDateCtrl
+      age: this.clientAgeCtrl
       
     });
 
@@ -106,14 +106,17 @@ export class InscriptionComponent implements OnInit {
   }
 
   addPirate(): void {
-    this.pirateInscriptionForm.value = new Capitaine();
+    console.log(this.pirateInscriptionForm.value);
+
+    let cap : Capitaine = new Capitaine();
+
+    cap.login = this.pirateInscriptionForm.value.login;
+    cap.password = this.pirateInscriptionForm.value.password;
+    cap.age = this.pirateInscriptionForm.value.age;
+    cap.pseudonyme = this.pirateInscriptionForm.value.pseudonyme;
+    cap.typeCompte = "Capitaine";
+
   }
 
-  // addAccount(account: any): Promise<any> {
-  //   return new Promise<any>((resolve, reject) => {
-  //     this.db.list('/accounts').push(account)
-  //       .then(res => resolve(res), err => reject(err));
-  //   });
-  // }
 
 }

@@ -73,10 +73,10 @@
                             Le mot de passe et sa confirmation ne correspondent pas
                         </span>
                     <tr>
-                        <td>Date de naissance </td>
-                        <td><input required type="date" class="form-control" id="date" formControlName="date"></td>
-                        <span *ngIf="pirateDateCtrl.dirty && pirateDateCtrl?.hasError('pattern')" class="text-danger">
-                            La date de naissance est obligatoire
+                        <td>Age</td>
+                        <td><input required type="number" class="form-control" id="age" formControlName="age"></td>
+                        <span *ngIf="pirateAgeCtrl.dirty && pirateAgeCtrl?.hasError('pattern')" class="text-danger">
+                            L'âge est obligatoire
                         </span>
                     </tr>
                     <tr id="inputPseudonyme">
@@ -149,10 +149,10 @@
                             Le mot de passe et sa confirmation ne correspondent pas
                         </span>
                     <tr>
-                        <td>Date de naissance </td>
-                        <td><input required type="date" class="form-control" id="date" formControlName="date"></td>
-                        <span *ngIf="clientDateCtrl.dirty && clientDateCtrl?.hasError('required')" class="text-danger">
-                            La date de naissance est obligatoire
+                        <td>Age </td>
+                        <td><input required type="number" class="form-control" id="age" formControlName="age"></td>
+                        <span *ngIf="clientAgeCtrl.dirty && clientAgeCtrl?.hasError('required')" class="text-danger">
+                            L'age obligatoire
                         </span>
                     </tr>
                     <tr id="inputNom">
