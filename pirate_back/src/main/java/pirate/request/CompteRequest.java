@@ -13,8 +13,15 @@ public class CompteRequest {
 	protected String password;
 	@NotBlank
 	protected String type_compte;
+	@NotBlank
+	protected String email;
 	
-	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public int getAge() {
 		return age;
 	}
