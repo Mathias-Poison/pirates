@@ -6,7 +6,7 @@ export class Compte {
     password: string;
     typeCompte: string;
 
-    constructor(id: number, age?: number, login?: string, password?: string, typeCompte?: string) {
+    constructor(id?: number, age?: number, login?: string, password?: string, typeCompte?: string) {
         this.id = id;
         this.age = age;
         this.login = login;
@@ -21,7 +21,7 @@ export class Capitaine extends Compte {
     missions: Array<Mission>;
     //encheres: Array<Enchere>;
 
-    constructor(id: number, age: number, login: string, password: string, typeCompte: string, pseudonyme: string, tauxReussite?: number, missions?: Array<Mission>) {
+    constructor(id?: number, age?: number, login?: string, password?: string, typeCompte?: string, pseudonyme?: string, tauxReussite?: number, missions?: Array<Mission>) {
         super(id, age, login, password, typeCompte);
 
         this.pseudonyme = pseudonyme;
@@ -44,7 +44,7 @@ export class Mission{
     statut:Statut;
     //bateau:Bateau;
 
-    constructor(id: number, libelle: string, duree: number, lieu: string, difficulte:number,date: Date,capitaine: Capitaine,statut:Statut) {
+    constructor(id?: number, libelle?: string, duree?: number, lieu?: string, difficulte?:number,date?: Date,capitaine?: Capitaine,statut?:Statut) {
         this.id = id;
         this.libelle = libelle;
         this.duree=duree;
