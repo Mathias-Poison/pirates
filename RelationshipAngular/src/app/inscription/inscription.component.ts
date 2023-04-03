@@ -12,15 +12,15 @@ import { CompteHttpService } from '../compte-http.service';
 })
 export class InscriptionComponent implements OnInit {
 
-  //pirateInscriptionForm: Capitaine =null;
+  //capitaineInscriptionForm: Capitaine =null;
 
-  pirateInscriptionForm: FormGroup;
-  pirateLoginCtrl: FormControl;
-  pirateEmailCtrl: FormControl;
-  piratePasswordCtrl: FormControl;
-  piratePasswordConfirmCtrl: FormControl;
-  piratePseudonymeCtrl: FormControl;
-  pirateAgeCtrl: FormControl;
+  capitaineInscriptionForm: FormGroup;
+  capitaineLoginCtrl: FormControl;
+  capitaineEmailCtrl: FormControl;
+  capitainePasswordCtrl: FormControl;
+  capitainePasswordConfirmCtrl: FormControl;
+  capitainePseudonymeCtrl: FormControl;
+  capitaineAgeCtrl: FormControl;
 
   clientInscriptionForm: FormGroup;
   clientLoginCtrl: FormControl;
@@ -38,12 +38,12 @@ export class InscriptionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.pirateLoginCtrl = this.formBuilder.control('', Validators.required);
-    this.pirateEmailCtrl = this.formBuilder.control('', [Validators.required, Validators.email]);
-    this.piratePasswordCtrl = this.formBuilder.control('', [Validators.required, Validators.minLength(8), Validators.pattern('^.*[A-Z]+.*$')]);
-    this.piratePasswordConfirmCtrl = this.formBuilder.control('',);
-    this.piratePseudonymeCtrl = this.formBuilder.control('', Validators.required);
-    this.pirateAgeCtrl = this.formBuilder.control('', Validators.required);
+    this.capitaineLoginCtrl = this.formBuilder.control('', Validators.required);
+    this.capitaineEmailCtrl = this.formBuilder.control('', [Validators.required, Validators.email]);
+    this.capitainePasswordCtrl = this.formBuilder.control('', [Validators.required, Validators.minLength(8), Validators.pattern('^.*[A-Z]+.*$')]);
+    this.capitainePasswordConfirmCtrl = this.formBuilder.control('',);
+    this.capitainePseudonymeCtrl = this.formBuilder.control('', Validators.required);
+    this.capitaineAgeCtrl = this.formBuilder.control('', Validators.required);
 
     this.clientLoginCtrl = this.formBuilder.control('', Validators.required);
     this.clientEmailCtrl = this.formBuilder.control('', [Validators.required, Validators.email]);
@@ -53,13 +53,13 @@ export class InscriptionComponent implements OnInit {
     this.clientPrenomCtrl = this.formBuilder.control('', Validators.required);
     this.clientAgeCtrl = this.formBuilder.control('', Validators.required);
 
-    this.pirateInscriptionForm = this.formBuilder.group({
-      login: this.pirateLoginCtrl,
-      email: this.pirateEmailCtrl,
-      password: this.piratePasswordCtrl,
-      passwordConfirm: this.piratePasswordConfirmCtrl,
-      pseudonyme: this.piratePseudonymeCtrl,
-      age: this.pirateAgeCtrl
+    this.capitaineInscriptionForm = this.formBuilder.group({
+      login: this.capitaineLoginCtrl,
+      email: this.capitaineEmailCtrl,
+      password: this.capitainePasswordCtrl,
+      passwordConfirm: this.capitainePasswordConfirmCtrl,
+      pseudonyme: this.capitainePseudonymeCtrl,
+      age: this.capitaineAgeCtrl
 
     });
 
@@ -74,21 +74,21 @@ export class InscriptionComponent implements OnInit {
       
     });
 
-    this.changeTypeCompte("Pirate")
+    this.changeTypeCompte("Capitaine")
   }
 
 
   inscription(type : string) {
-    if (type === "Pirate"){
-      console.log(this.pirateInscriptionForm.value)
+    if (type === "Capitaine"){
+      console.log(this.capitaineInscriptionForm.value)
 
       let cap : Capitaine = new Capitaine();
       
-          cap.login = this.pirateInscriptionForm.value.login;
-          cap.password = this.pirateInscriptionForm.value.password;
-          cap.age = this.pirateInscriptionForm.value.age;
-          cap.pseudonyme = this.pirateInscriptionForm.value.pseudonyme;
-          cap.typeCompte = "Pirate";
+          cap.login = this.capitaineInscriptionForm.value.login;
+          cap.password = this.capitaineInscriptionForm.value.password;
+          cap.age = this.capitaineInscriptionForm.value.age;
+          cap.pseudonyme = this.capitaineInscriptionForm.value.pseudonyme;
+          cap.type_compte = "capitaine";
           this.compteHttpService.create(cap);
     }
     else{
@@ -97,16 +97,16 @@ export class InscriptionComponent implements OnInit {
   }
 
   changeTypeCompte(type: string) {
-    let pirateForm = document.getElementById("pirateForm")
+    let capitaineForm = document.getElementById("capitaineForm")
     let clientForm = document.getElementById("clientForm")
 
-    if (type === "Pirate") {
-      pirateForm.style.display = "block";
+    if (type === "Capitaine") {
+      capitaineForm.style.display = "block";
       clientForm.style.display = "none"
     }
 
     else if (type === "Client") {
-      pirateForm.style.display = "none";
+      capitaineForm.style.display = "none";
       clientForm.style.display = "block";
     }
 

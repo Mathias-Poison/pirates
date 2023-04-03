@@ -8,6 +8,14 @@ public class CompteResponse {
 	protected int age;
 	protected String login;
 	protected String password;
+	protected String email;
+	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public Integer getId() {
 		return id;
 	}

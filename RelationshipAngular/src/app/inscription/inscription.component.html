@@ -11,15 +11,15 @@
 
         <tr>
             <td>Type de compte</td>
-            <td><input required (click)="changeTypeCompte('Pirate')" checked type="radio" name="typeCompte"
-                    value="Pirate"> Capitaine
+            <td><input required (click)="changeTypeCompte('Capitaine')" checked type="radio" name="typeCompte"
+                    value="Capitaine"> Capitaine
                 <input required (click)="changeTypeCompte('Client')" type="radio" name="typeCompte" value="Client">
                 Client
             </td>
         </tr>
     </table>
 
-    <form id="pirateForm" [formGroup]="pirateInscriptionForm" (ngSubmit)="inscription('Pirate')">
+    <form id="capitaineForm" [formGroup]="capitaineInscriptionForm" (ngSubmit)="inscription('Capitaine')">
 
         <div id="content">
 
@@ -33,7 +33,7 @@
                         <td>Login : </td>
                         <td><input required type="text" class="form-control" id="login" formControlName="login"
                                 placeholder="Saisir le login"></td>
-                        <span *ngIf="pirateLoginCtrl.dirty && pirateLoginCtrl?.hasError('required')"
+                        <span *ngIf="capitaineLoginCtrl.dirty && capitaineLoginCtrl?.hasError('required')"
                             class="text-danger">
                             Le login est obligatoire
                         </span>
@@ -43,11 +43,11 @@
                         <td>Email : </td>
                         <td><input required type="text" class="form-control" id="email" formControlName="email"
                                 placeholder="Saisir votre adresse email"></td>
-                        <span *ngIf="pirateEmailCtrl.dirty && pirateEmailCtrl?.hasError('required')"
+                        <span *ngIf="capitaineEmailCtrl.dirty && capitaineEmailCtrl?.hasError('required')"
                             class="text-danger">
                             L'email est obligatoire
                         </span>
-                        <span *ngIf="pirateEmailCtrl.dirty && pirateEmailCtrl?.hasError('email')" class="text-danger">
+                        <span *ngIf="capitaineEmailCtrl.dirty && capitaineEmailCtrl?.hasError('email')" class="text-danger">
                             L'email est invalide
                         </span>
                     </tr>
@@ -56,11 +56,11 @@
                         <td> <input required type="password" class="form-control" id="password"
                                 formControlName="password" placeholder="saisir le mot de passe">min 8 carac, 1 maj ou 1 carac spécial
                             </td>
-                        <span *ngIf="piratePasswordCtrl.dirty && piratePasswordCtrl?.hasError('required')"
+                        <span *ngIf="capitainePasswordCtrl.dirty && capitainePasswordCtrl?.hasError('required')"
                             class="text-danger">
                             Le mot de passe est obligatoire
                         </span>
-                        <span *ngIf="piratePasswordCtrl.dirty && piratePasswordCtrl?.hasError('pattern')"
+                        <span *ngIf="capitainePasswordCtrl.dirty && capitainePasswordCtrl?.hasError('pattern')"
                             class="text-danger">
                             Le mot de passe n'est pas au bon format
                         </span>
@@ -68,14 +68,14 @@
                     <td>Confirmation du password :</td>
                     <td> <input required type="password" class="form-control" id="passwordConfirm"
                             formControlName="passwordConfirm" placeholder="saisir le mot de passe"></td>
-                            <span *ngIf="piratePasswordCtrl.value != piratePasswordConfirmCtrl.value"
+                            <span *ngIf="capitainePasswordCtrl.value != capitainePasswordConfirmCtrl.value"
                             class="text-danger">
                             Le mot de passe et sa confirmation ne correspondent pas
                         </span>
                     <tr>
                         <td>Age</td>
                         <td><input required type="number" class="form-control" id="age" formControlName="age"></td>
-                        <span *ngIf="pirateAgeCtrl.dirty && pirateAgeCtrl?.hasError('pattern')" class="text-danger">
+                        <span *ngIf="capitaineAgeCtrl.dirty && capitaineAgeCtrl?.hasError('pattern')" class="text-danger">
                             L'âge est obligatoire
                         </span>
                     </tr>
@@ -83,13 +83,13 @@
                         <td>Pseudonyme :</td>
                         <td> <input required type="text" class="form-control" id="pseudonyme" name="pseudonyme"
                                 formControlName="pseudonyme" placeholder="Saisir votre pseudonyme"></td>
-                        <span *ngIf="piratePseudonymeCtrl.dirty && piratePseudonymeCtrl?.hasError('required')"
+                        <span *ngIf="capitainePseudonymeCtrl.dirty && capitainePseudonymeCtrl?.hasError('required')"
                             class="text-danger">
                             Le pseudonyme est obligatoire
                         </span>
                     </tr>
                 </table>
-                <input class="btn btn-success" type="submit" value="S'inscrire Pirate" [disabled]="pirateInscriptionForm.invalid" 
+                <input class="btn btn-success" type="submit" value="S'inscrire Capitaine" [disabled]="capitaineInscriptionForm.invalid" 
                 >
 
             </div>

@@ -37,8 +37,12 @@ public class Compte {
 	
 	@Column(name = "type_compte", insertable = false, updatable = false)
 	@JsonView(Views.Compte.class)
-	protected String typeCompte;
+	protected String type_compte;
 	
+	@Column(name = "email", insertable = false, updatable = false)
+	@JsonView(Views.Compte.class)
+	protected String email;
+
 	public Compte() {
 		
 	}
@@ -48,6 +52,14 @@ public class Compte {
 		this.login = login;
 		this.password = password;
 
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public int getId() {
@@ -82,12 +94,12 @@ public class Compte {
 		this.password = password;
 	}
 
-	public String getTypeCompte() {
-		return typeCompte;
+	public String getType_compte() {
+		return type_compte;
 	}
 
-	public void setTypeCompte(String typeCompte) {
-		this.typeCompte = typeCompte;
+	public void setType_compte(String typeCompte) {
+		this.type_compte = typeCompte;
 	}
 
 	@Override
