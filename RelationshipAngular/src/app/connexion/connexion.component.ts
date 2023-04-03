@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CompteHttpService } from '../compte-http.service';
 import { Compte } from '../models/models';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-connexion',
@@ -10,14 +11,12 @@ import { Compte } from '../models/models';
 export class ConnexionComponent {
   login: string;
   password: string;
-  compte:Compte | undefined;
-  constructor(private httpCompte : CompteHttpService){
+ 
+  constructor(private loginService : LoginService){
     
   } 
 
   seConnecter() {
-    this.httpCompte.findByLoginAndPassword(this.login, this.password).subscribe((compte: Compte) => {
-    this.compte = compte;
-    });
+    this.loginService.authentifier(this.login,this.password);
     }
 }
