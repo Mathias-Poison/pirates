@@ -115,10 +115,14 @@ public class CompteApiController {
 
 		if(compteRequest.getType_compte().equals("capitaine"))
 		{
-			compte = new Capitaine();
+			Capitaine capitaine = new Capitaine(compteRequest.getAge(), compteRequest.getLogin(), compteRequest.getPassword(), compteRequest.getPseudonyme(), 
+					 compteRequest.getType_compte(), compteRequest.getEmail());
+			return this.daoCompte.save(capitaine);
 		}
 		else if(compteRequest.getType_compte().equals("client")) {
-			compte = new Client();
+			Client client = new Client(compteRequest.getAge(), compteRequest.getLogin(), compteRequest.getPassword(), compteRequest.getNom(), 
+					compteRequest.getPrenom(),compteRequest.getType_compte(), compteRequest.getEmail());
+			return this.daoCompte.save(client);
 		}
 		else if (compteRequest.getType_compte().equals("admin")) {
 			compte = new Admin();

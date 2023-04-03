@@ -31,7 +31,7 @@ public class Capitaine extends Compte {
 	
 	public Capitaine() {}
 	
-	public Capitaine(int age,String login, String password, String pseudonyme, int tauxReussite, String type_compte, String email) {
+	public Capitaine(int age,String login, String password, String pseudonyme, String type_compte, String email) {
 		super(age, login, password, type_compte, email);
 		
 		this.pseudonyme = pseudonyme;
