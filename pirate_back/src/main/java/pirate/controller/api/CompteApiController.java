@@ -98,6 +98,7 @@ public class CompteApiController {
 
 
 	//Ajouter 
+	@CrossOrigin("*")
 	@PostMapping
 	@JsonView(Views.Compte.class)
 	public Compte add(@RequestBody @Valid CompteRequest compteRequest, BindingResult result) {

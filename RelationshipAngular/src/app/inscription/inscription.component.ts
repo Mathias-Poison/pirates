@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Capitaine, Compte } from '../models/models';
+import { CompteHttpService } from '../compte-http.service';
 
 
 @Component({
   selector: 'app-inscription',
   templateUrl: './inscription.component.html',
-  styleUrls: ['./inscription.component.css']
+  styleUrls: ['./inscription.component.css'],
+  providers:[CompteHttpService]
 })
 export class InscriptionComponent implements OnInit {
 
@@ -29,9 +31,9 @@ export class InscriptionComponent implements OnInit {
   clientPrenomCtrl: FormControl;
   clientAgeCtrl: FormControl;
 
+  
 
-
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private compteHttpService: CompteHttpService) {
 
   }
 
@@ -78,7 +80,16 @@ export class InscriptionComponent implements OnInit {
 
   inscription(type : string) {
     if (type === "Pirate"){
-      console.log(this.pirateInscriptionForm.value) //todo send this to db
+      console.log(this.pirateInscriptionForm.value)
+
+      let cap : Capitaine = new Capitaine();
+      
+          cap.login = this.pirateInscriptionForm.value.login;
+          cap.password = this.pirateInscriptionForm.value.password;
+          cap.age = this.pirateInscriptionForm.value.age;
+          cap.pseudonyme = this.pirateInscriptionForm.value.pseudonyme;
+          cap.typeCompte = "Pirate";
+          this.compteHttpService.create(cap);
     }
     else{
       console.log(this.clientInscriptionForm.value)
@@ -100,23 +111,4 @@ export class InscriptionComponent implements OnInit {
     }
 
   }
-
-  addClient(): void {
-    //this.clientInscriptionForm = new Client();
-  }
-
-  addPirate(): void {
-    console.log(this.pirateInscriptionForm.value);
-
-    let cap : Capitaine = new Capitaine();
-
-    cap.login = this.pirateInscriptionForm.value.login;
-    cap.password = this.pirateInscriptionForm.value.password;
-    cap.age = this.pirateInscriptionForm.value.age;
-    cap.pseudonyme = this.pirateInscriptionForm.value.pseudonyme;
-    cap.typeCompte = "Capitaine";
-
-  }
-
-
 }
