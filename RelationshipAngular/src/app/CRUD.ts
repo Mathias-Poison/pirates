@@ -3,13 +3,13 @@ import { Compte } from "./models/models"
 
 export class Crud {
 
-    compteForm: Compte = null;
+    compteForm: Compte = null;  // le compteForm est général, à adapter avec le contexte
   
     constructor(private compteService: CompteHttpService) {
   
     }
 
-list(): Array<Compte> {
+    list(): Array<Compte> {
     return this.compteService.findAll();
   }
 
