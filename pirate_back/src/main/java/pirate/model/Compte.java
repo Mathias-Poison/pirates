@@ -35,11 +35,11 @@ public class Compte {
 	@Column(name="password",length = 125,nullable = false)
 	protected String password;
 	
-	@Column(name = "type_compte", insertable = false, updatable = false)
-	@JsonView(Views.Compte.class)
+	@Column(name = "type_compte", insertable=false, updatable=false)
+	@JsonView(Views.Compte.class )
 	protected String type_compte;
 	
-	@Column(name = "email", insertable = false, updatable = false)
+	@Column(name = "email")
 	@JsonView(Views.Compte.class)
 	protected String email;
 
@@ -47,11 +47,14 @@ public class Compte {
 		
 	}
 	
-	public Compte(int age, String login, String password) {
+	public Compte(int age, String login, String password, String type_compte, String email) {
 		this.age = age;
 		this.login = login;
 		this.password = password;
+		this.type_compte = type_compte;
+		this.email = email;
 
+		
 	}
 	
 	public String getEmail() {
@@ -98,8 +101,8 @@ public class Compte {
 		return type_compte;
 	}
 
-	public void setType_compte(String typeCompte) {
-		this.type_compte = typeCompte;
+	public void setType_compte(String type_compte) {
+		this.type_compte = type_compte;
 	}
 
 	@Override

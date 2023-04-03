@@ -27,6 +27,7 @@ import pirate.model.Capitaine;
 import pirate.model.Client;
 import pirate.model.Compte;
 import pirate.model.Mission;
+import pirate.request.CapitaineRequest;
 import pirate.request.CompteRequest;
 import pirate.response.CompteResponse;
 
