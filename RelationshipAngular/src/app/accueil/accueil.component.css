@@ -1,0 +1,14 @@
+.connexion{
+    display: flex;
+    flex-direction: column;
+}
+.inscription{
+    display: flex;
+    flex-direction: column;
+}
+.doubleBlock{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100%;
+}
