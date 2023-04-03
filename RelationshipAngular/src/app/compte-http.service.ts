@@ -17,9 +17,35 @@ export class CompteHttpService {
     return this.comptes;
   }
 
-  
-  findByLoginAndPassword(login: string, password:string){
-    return this.http.post<Compte>("http://localhost:8080/api/compte", {login,password})
+  findByLoginAndPassword(login: string, password:string) : Observable<Compte>{
+    return this.http.get<Compte>("http://localhost:8080/api/compte"+ "/" + login + "/" + password);
   }
 
+  findById(id: number): Observable<Compte> {
+    return this.http.get<Compte>("http://localhost:8080/api/compte" + "/" + id);
+  }
+
+  create(compte: Compte): void {
+    this.http.post<Compte>("http://localhost:8080/api/compte", compte).subscribe(resp => {
+      this.load();
+    });
+  }
+
+  update(compte: Compte): void {
+    this.http.put<Compte>("http://localhost:8080/api/compte" + "/" +  compte.id, compte).subscribe(resp => {
+      this.load();
+    });
+  }
+
+  remove(id: number): void {
+    this.http.delete<boolean>("http://localhost:8080/api/compte" + "/" + id).subscribe(resp => {
+      this.load();
+    });
+  }
+
+  private load(): void {
+    this.http.get<Array<Compte>>("http://localhost:8080/api/compte").subscribe(resp => {
+        this.comptes = resp;
+    })
+  }
 }

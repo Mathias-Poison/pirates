@@ -13,11 +13,10 @@ export class ConnexionComponent {
   compte:Compte | undefined;
   constructor(private httpCompte : CompteHttpService){
     
-  }
+  } 
 
   seConnecter() {
-    this.httpCompte.findByLoginAndPassword(this.login, this.password)
-    .subscribe((compte: Compte) => {
+    this.httpCompte.findByLoginAndPassword(this.login, this.password).subscribe((compte: Compte) => {
     this.compte = compte;
     });
     }

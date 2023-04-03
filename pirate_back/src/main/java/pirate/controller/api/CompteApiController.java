@@ -86,13 +86,18 @@ public class CompteApiController {
 
 
 	//find by login et password(pour se connecter)
-	@GetMapping("/connexion")
-	public Compte findByLoginAndPassword (@Valid @RequestParam String login, @Valid @RequestParam String password, BindingResult result)
+	@GetMapping("/connexion/{login}/{password}")
+	public CompteResponse findByLoginAndPassword (@Valid @PathVariable String login, @Valid @PathVariable String password)
 	{ 
-		if (result.hasErrors()) 
-		{throw new CompteNotFoundException();}
+//		if (result.hasErrors()) 
+//		{throw new CompteNotFoundException();}
 		Compte compte = this.daoCompte.findByLoginAndPassword(login, password);		
-		return compte;
+		CompteResponse resp = new CompteResponse();
+
+		BeanUtils.copyProperties(compte, resp);
+
+		return resp;
+//		return compte;
 	}
 
 
