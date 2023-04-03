@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ConnexionHttpService } from './connexion/connexion-http.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CompteHttpService } from './compte-http.service';
+import { AccueilComponent } from './accueil/accueil.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CompteHttpService } from './compte-http.service';
     PirateMenuComponent,
     MissionsPirateComponent,
     EncherirComponent,
+    AccueilComponent,
     
   ],
   imports: [
