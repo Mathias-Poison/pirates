@@ -9,6 +9,7 @@ public class CompteResponse {
 	protected String login;
 	protected String password;
 	protected String email;
+	protected String type_compte;
 	
 	public String getEmail() {
 		return email;

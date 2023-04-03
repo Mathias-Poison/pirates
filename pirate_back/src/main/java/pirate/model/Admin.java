@@ -11,8 +11,8 @@ public class Admin extends Compte {
 		
 	}
 	
-	public Admin(int age, String login, String password) {
-		super(age, login, password);
+	public Admin(int age, String login, String password, String type_compte, String email) {
+		super(age, login, password, type_compte, email);
 		
 	}
 	

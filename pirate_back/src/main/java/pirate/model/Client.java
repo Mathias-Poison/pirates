@@ -26,8 +26,8 @@ public class Client extends Compte{
 
 	}
 	
-	public Client(int age, String login, String password, String nom, String prenom) {
-		super(age, login, password);
+	public Client(int age, String login, String password, String nom, String prenom, String type_compte, String email) {
+		super(age, login, password, type_compte, email);
 		
 		this.nom = nom;
 		this.prenom = prenom;

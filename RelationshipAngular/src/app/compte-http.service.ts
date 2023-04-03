@@ -18,7 +18,7 @@ export class CompteHttpService {
   }
 
   findByLoginAndPassword(login: string, password:string) : Observable<Compte>{
-    return this.http.get<Compte>("http://localhost:8080/api/compte"+ "/" + login + "/" + password);
+    return this.http.get<Compte>("http://localhost:8080/api/compte/connexion/"+ login + "/" + password);
   }
 
   findById(id: number): Observable<Compte> {
