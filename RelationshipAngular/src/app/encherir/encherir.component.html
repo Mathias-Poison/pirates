@@ -4,7 +4,7 @@
   <link rel="stylesheet" type="text/css" href="encherir.component.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Livvic&display=swap">
-  
+
 <div class="background1">
   <div id="menu">
     <div id="logo">
@@ -36,6 +36,32 @@
       Et en <img src="assets/img/os.png" height=43px>s
     </div>
   </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Numero</th>
+        <th>Libelle</th>
+        <th>Duree</th>
+        <th>Lieu</th>
+  <th>Difficulté</th>
+        <th>Proposée le</th>
+        <th>Statut</th>
+  <th>Enchérir</th>
+      </tr>
+    </thead>
+<tbody colspan="8">
+      <tr *ngFor="let m of missions">
+        <td>{{m.id}}</td>
+        <td>{{m.libelle}}</td>
+        <td>{{m.duree}}</td>
+        <td>{{m.lieu}}</td>
+        <td>{{m.difficulte}}</td>
+        <td>{{m.date}}</td>
+        <td>{{m.statut}}</td>
+        <td><a [routerLink]="['/encherir', m.id]"><img src="assets/img/plus2.png" alt="voir plus" align="center" height="30px"></a></td>
+      </tr>
+</tbody>
+</table>
   <div id="text">
   <h2 class="line-1">Meilleure enchère :</h2>
   <div class="line-2">
