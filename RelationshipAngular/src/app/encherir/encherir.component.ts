@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Mission } from '../models/models';
 import { MissionsPirateHttpService } from '../missions-pirate/missions-pirate-http.service';
@@ -8,16 +8,20 @@ import { MissionsPirateHttpService } from '../missions-pirate/missions-pirate-ht
   templateUrl: './encherir.component.html',
   styleUrls: ['./encherir.component.css']
 })
-export class EncherirComponent {
-  constructor(private route: ActivatedRoute, private missionHttpservice : MissionsPirateHttpService) {
-    this.route.params.subscribe(params => {
-      console.log(params);
-    
-      });      
-  }
-  mission= new Mission();
+export class EncherirComponent implements OnInit{
+  constructor(private route: ActivatedRoute, private missionHttpservice : MissionsPirateHttpService) {}
+  mission: Mission=null;
 
-  findById(id: number): Mission {
-    return this.missionHttpservice.missions.find(t => t.id == id);
-   }
+  private id:number;
+  
+
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.id = params['id'];
+      this.mission = this.missionHttpservice.missions.find(m => m.id == this.id);
+      console.log(this.id);
+      console.log(this.mission);
+    }); 
+  }
+
 }

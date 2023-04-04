@@ -43,22 +43,20 @@
         <th>Libelle</th>
         <th>Duree</th>
         <th>Lieu</th>
-  <th>Difficulté</th>
+        <th>Difficulté</th>
         <th>Proposée le</th>
         <th>Statut</th>
-  <th>Enchérir</th>
       </tr>
     </thead>
 <tbody colspan="8">
-      <tr *ngFor="let m of missions">
-        <td>{{m.id}}</td>
-        <td>{{m.libelle}}</td>
-        <td>{{m.duree}}</td>
-        <td>{{m.lieu}}</td>
-        <td>{{m.difficulte}}</td>
-        <td>{{m.date}}</td>
-        <td>{{m.statut}}</td>
-        <td><a [routerLink]="['/encherir', m.id]"><img src="assets/img/plus2.png" alt="voir plus" align="center" height="30px"></a></td>
+      <tr>
+        <td>{{mission.id}}</td>
+        <td>{{mission.libelle}}</td>
+        <td>{{mission.duree}}</td>
+        <td>{{mission.lieu}}</td>
+        <td>{{mission.difficulte}}</td>
+        <td>{{mission.date}}</td>
+        <td>{{mission.statut}}</td>
       </tr>
 </tbody>
 </table>
@@ -72,7 +70,7 @@
 </div>
 <div id="search2">
   <form>
-    <span><img src="assets/img/coins.png" alt="recherche" height="45px"></span>
+    <!-- <span><img src="assets/img/coins.png" alt="recherche" height="45px"></span> -->
     <input type="text" placeholder="Enchérir">
     <button type="submit"><img src="assets/img/submit.png" alt="Submit"></button>
   </form>
