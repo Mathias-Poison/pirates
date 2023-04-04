@@ -1,0 +1,421 @@
+.background1 {
+    background-color: black;
+    cursor: url('/assets/sabre.cur'), default;
+  }
+  
+  a {
+    color: white;
+  }
+  
+  a:hover {
+    cursor: url('/assets/hook.cur'), pointer;
+  }
+  
+  a img:hover {
+    cursor: url('/assets/hook.cur'), pointer;
+    content: url('/assets/img/plus.png');
+    height: 30px;
+  }
+  
+  
+  
+  .background {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('/assets/img/back_encheres.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: calc(100% - 80px); /* Ajustement ici */
+    display: flex; /* Ajout */
+  }
+  
+  #search-bar {
+    border: 3px solid black; /* Ajout */
+  }
+  
+  /* Autres rÃ¨gles CSS existantes */
+  
+  .container {
+    position: absolute;
+    top: O;
+    right: 0;
+    transform: translateY(-45px);
+  }
+  
+  /* Animation */
+  .rectangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 140px;
+    height: 100%;
+    background: black;
+    animation: rectangle-descend 10s ease-out forwards;
+  }
+  
+  .explosion {
+    position: fixed;
+    bottom: 5px;
+    left: calc(50% - 95px - 5px); /* Modification ici */
+    width: 160px;
+    height: auto;
+    opacity: 0;
+    z-index: 9999;
+    animation: explosion-appear 0s ease-out forwards 10s;
+  }
+  
+  
+  @keyframes rectangle-descend {
+    0% {
+      height: 0;
+    } 99.99999%{
+      height: 84.5%;
+    }
+    100% {
+      height: 100%;
+    }
+  }
+  
+  @keyframes explosion-appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .rectangle::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15.5%;
+    background: black;
+    opacity: 0;
+    animation: rectangle-fadein 0s ease-out forwards 10s;
+  }
+  
+  .rectangle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15.5%;
+    background: white;
+    opacity: 0;
+    animation: rectangle-fadein 0s ease-out forwards 10s;
+  }
+  
+  @keyframes rectangle-fadein {
+    99.99999% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* menu */
+  
+  #menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #4d4d4d;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    z-index: 9999; /* Add this line to bring the menu to the front */
+  }
+  
+  #logo img {
+    height: 80px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  
+  #search {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 700px;
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 0 10px;
+    margin-right: 10px;
+  }
+  
+  #search img {
+    height: 30px;
+    margin-right: 5px;
+    margin-left: 10px;
+  }
+  
+  #search form {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #search input[type="text"],
+  #search button[type="submit"] {
+    cursor: url('/assets/hook.cur'), pointer;
+    border: none;
+    background-color: transparent;
+    outline: none;
+  }
+  
+  #search input[type="text"] {
+    width: calc(100% - 50px);
+    height: 50px;
+    font-size: 20px;
+    font-family: Livvic, sans-serif;
+    padding: 0 10px;
+  }
+  
+  #search button[type="submit"] {
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  #search button[type="submit"] img {
+    height: 40px;
+  }
+  
+  #icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    height: 80px;
+  }
+  
+  #icons img {
+    height: 50px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    #menu {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    #search {
+      width: 60%;
+      margin-left: 20px;
+    }
+  }
+  
+  
+  #icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    margin-right: 150px;
+  }
+  
+  #icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc((80% - 150px) / 4); /* 80% pour tenir compte du logo et de la barre de recherche et 150px pour la somme des marges et des bordures, divisÃ© par 4 pour obtenir une largeur Ã©gale pour chaque icÃ´ne */
+    margin: 0 50px; /* 50px de marge totale, divisÃ© par 2 pour obtenir une marge Ã©gale de chaque cÃ´tÃ© de l'icÃ´ne */
+    height: 80px;
+    box-sizing: border-box; /* inclure les bordures et le padding dans la largeur et la hauteur de l'Ã©lÃ©ment */
+  }
+  
+  #icons img {
+    height: 70px;
+    padding: 10px; /* ajouter du padding pour l'espace entre l'image et la bordure */
+    box-sizing: border-box; /* inclure les bordures et le padding dans la largeur et la hauteur de l'Ã©lÃ©ment */
+  }
+  
+  .icon {
+    height: 70px;
+  }
+  .menu-link img:hover {
+    cursor: url('assets/hook.cur'), pointer;
+    height: 30px;
+  }
+  
+  .menu-link .overlay-accueil:hover {
+    content: url('assets/img/menu_accueil_hover.png');
+  }
+  
+  .menu-link .overlay-enchere:hover {
+    content: url('assets/img/menu_enchere_hover.png');
+  }
+  
+  .menu-link .overlay-mission:hover {
+    content: url('assets/img/menu_missions_hover.png');
+  }
+  
+  .menu-link .overlay-plus:hover {
+    content: url('assets/img/menu_plus_hover.png');
+  }
+  
+  
+  /* Ã©lÃ©ments page*/
+  .image-enchere {
+    background-color: white;
+    width: calc(100vw - 1057px);
+    height: calc(100vh - 50px);
+    margin: 0 100px;
+  }
+  
+  .text-container {
+    font-family: 'Pirata One', arial, sans-serif;
+    font-size: 70px;
+    text-align: center;
+  }
+  
+  .image-enchere img {
+    max-width: 100%;
+  }
+  
+  .container {
+    position: absolute;
+    top: 0px;
+    right: 0;
+  }
+  
+  
+  /* textes */
+  #text {
+    position: absolute;
+    top: 150px;
+    left: 800px;
+    right: 240px;
+    color: #fff;
+    font-family: 'Pirata One', cursive;
+    text-align: center;
+    transform: scale(1.5);
+    transform-origin: top left;
+  }
+  
+  
+  #text h2 {
+    margin: 0;
+    font-size: 32px;
+  }
+  
+  #text img {
+    height: 24px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  #text p {
+    margin: 0;
+    font-size: 24px;
+    font-family: 'Livvic Bold', sans-serif;
+  }
+  
+  #text .line-1 {
+    margin-bottom: 20px;
+  }
+  
+  #text .line-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  #text .line-2 p {
+    display: flex;
+    align-items: center;
+  }
+  
+  #text .line-2 img {
+    height: 32px;
+  }
+  
+  #text .line-3 {
+    font-family: 'Livvic Bold', sans-serif;
+    font-size: 24px;
+  }
+  
+  .image-cadre {
+    width: 100px;
+    height: auto;
+  }
+  
+  /* barre de recherche */
+  #search2 {
+    position: fixed;
+    left: 1200px;
+    bottom: 25px;
+    width: 300px;
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    border: 3px solid black;
+  }
+  
+  #search2 form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+  
+  #search2 form span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+  }
+  
+  #search2 input[type="text"] {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-family: 'Livvic', sans-serif;
+    font-size: 16px;
+    padding: 5px 10px;
+    cursor: url('assets/hook.cur'), pointer;
+  }
+  
+  #search2 button[type="submit"] {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+    cursor: url('assets/hook.cur'), pointer;
+  }
+  
+  #search2 button[type="submit"] img {
+    height: 20px;
+    cursor: url('assets/hook.cur'), pointer;
+  }
+  
+  #search2 input[type="text"]::placeholder {
+    color: #ccc;
+    font-family: 'Livvic', sans-serif;
+    font-size: 16px;
+  }
+  

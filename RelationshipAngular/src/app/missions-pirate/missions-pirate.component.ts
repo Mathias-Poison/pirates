@@ -10,7 +10,7 @@ import { MissionsPirateHttpService } from './missions-pirate-http.service';
 export class MissionsPirateComponent {
   
 
-  m1=new Mission(3,"Retrouver Maurice",2,"Chez Mathias",1,null,null,null)
+  m1=new Mission(3,"Retrouver Maurice",2,"Chez Mathias",1, new Date(),null,null)
   m2=new Mission(4,"Retrouver Maurice",2,"Chez Mathias",1,null,null,null)
   m3=new Mission(5,"Retrouver Maurice",2,"Chez Mathias",1,null,null,null)
 
