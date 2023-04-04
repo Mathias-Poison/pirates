@@ -88,6 +88,7 @@ export class InscriptionComponent implements OnInit {
           cap.password = this.capitaineInscriptionForm.value.password;
           cap.age = this.capitaineInscriptionForm.value.age;
           cap.pseudonyme = this.capitaineInscriptionForm.value.pseudonyme;
+          cap.email = this.capitaineInscriptionForm.value.email;
           cap.type_compte = "capitaine";
           this.compteHttpService.create(cap);
     }

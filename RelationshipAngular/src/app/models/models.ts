@@ -5,6 +5,7 @@ export class Compte {
     login: string;
     password: string;
     type_compte: string;
+    email: string;
 
     constructor(id?: number, age?: number, login?: string, password?: string, type_compte?: string) {
         this.id = id;
