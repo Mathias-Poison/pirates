@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Capitaine, Compte } from '../models/models';
 import { CompteHttpService } from '../compte-http.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -30,10 +31,9 @@ export class InscriptionComponent implements OnInit {
   clientNomCtrl: FormControl;
   clientPrenomCtrl: FormControl;
   clientAgeCtrl: FormControl;
-
   
 
-  constructor(private formBuilder: FormBuilder, private compteHttpService: CompteHttpService) {
+  constructor(private formBuilder: FormBuilder, private compteHttpService: CompteHttpService, private router: Router) {
 
   }
 
@@ -91,6 +91,7 @@ export class InscriptionComponent implements OnInit {
           cap.email = this.capitaineInscriptionForm.value.email;
           cap.type_compte = "capitaine";
           this.compteHttpService.create(cap);
+          this.router.navigate(['/connexion']);
     }
     else{
       console.log(this.clientInscriptionForm.value)
