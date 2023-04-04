@@ -1,6 +1,7 @@
-body {
+.background {
     background-color: black;
-    cursor: url('assets/sabre.cur'), default;
+    cursor: url('/assets/sabre.cur'), default;
+    z-index: -5;
   }
   
   a {
@@ -8,12 +9,12 @@ body {
   }
   
   a:hover {
-    cursor: url('assets/hook.cur'), pointer;
+    cursor: url('/assets/hook.cur'), pointer;
   }
   
   a img:hover {
-    cursor: url('assets/hook.cur'), pointer;
-    content: url('assets/img/plus.png');
+    cursor: url('/assets/hook.cur'), pointer;
+    content: url('/assets/img/plus.png');
     height: 30px;
   }
   
@@ -320,24 +321,24 @@ body {
     height: 70px;
   }
   .menu-link img:hover {
-    cursor: url('assets/hook.cur'), pointer;
+    cursor: url('/assets/hook.cur'), pointer;
     height: 30px;
   }
   
   .menu-link .overlay-accueil:hover {
-    content: url('assets/img/menu_accueil_hover.png');
+    content: url('/assets/img/menu_accueil_hover.png');
   }
   
   .menu-link .overlay-enchere:hover {
-    content: url('assets/img/menu_enchere_hover.png');
+    content: url('/assets/img/menu_enchere_hover.png');
   }
   
   .menu-link .overlay-mission:hover {
-    content: url('assets/img/menu_missions_hover.png');
+    content: url('/assets/img/menu_missions_hover.png');
   }
   
   .menu-link .overlay-plus:hover {
-    content: url('assets/img/menu_plus_hover.png');
+    content: url('/assets/img/menu_plus_hover.png');
   }
   
   
