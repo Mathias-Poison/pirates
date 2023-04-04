@@ -1,0 +1,82 @@
+body {
+  background-image: url('assets/back_fumee.png');
+  background-repeat: repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  margin: -9px;
+  cursor: url('assets/sabre.cur'), default;
+}
+
+a:hover {
+  cursor: url('assets/hook.cur'), pointer;
+}
+
+img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: 10px;
+  height: 100vh;
+}
+
+form {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  width: 500px;
+  max-width: 100%;
+}
+
+form input[type="text"], form input[type="password"] {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #ffffff;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  cursor: url('assets/hook.cur'), pointer;
+}
+
+form button[type="submit"] {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #ff3e3b;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: black;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  cursor: url('assets/hook.cur'), pointer;
+}
+
+form button[type="submit"]:hover,
+form button[type="submit"]:active,
+form button[type="submit"]:focus {
+  background-color: #9F2725;
+  color: white;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-container label {
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  transition: all 0.3s ease;
+  color: black;
+  font-family: Livvic, sans-serif;
+}
+
+.input-container input:focus ~ label,
+.input-container input:valid ~ label {
+  display: none;
+}
