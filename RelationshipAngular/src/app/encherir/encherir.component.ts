@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-encherir',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./encherir.component.css']
 })
 export class EncherirComponent {
-
+  constructor(private route: ActivatedRoute) {
+    
+  }
 }

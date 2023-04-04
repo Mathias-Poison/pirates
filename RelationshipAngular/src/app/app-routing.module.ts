@@ -11,7 +11,7 @@ const routes: Routes = [
 {path: "connexion", component: ConnexionComponent},
 {path: "pirate", component: MainMenuComponent},
 {path: "missions-pirate", component: MissionsPirateComponent},
-{path: "encherir", component: EncherirComponent},
+{path: "encherir/:id", component: EncherirComponent},
 ];
 
 @NgModule({

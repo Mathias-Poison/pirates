@@ -39,20 +39,20 @@ export class Mission{
     lieu: string;
     difficulte:number;
     date: Date;
-    capitaine: Capitaine;
+    // capitaine: Capitaine;
     //client:Client;
     //enchere:Array<Enchere>;
     statut:Statut;
     //bateau:Bateau;
 
-    constructor(id?: number, libelle?: string, duree?: number, lieu?: string, difficulte?:number,date?: Date,capitaine?: Capitaine,statut?:Statut) {
+    constructor(id?: number, libelle?: string, duree?: number, lieu?: string, difficulte?:number,date?: Date,statut?:Statut) {
         this.id = id;
         this.libelle = libelle;
         this.duree=duree;
         this.lieu=lieu;
         this.difficulte=difficulte;
         this.date=date;
-        this.capitaine=capitaine;
+        // this.capitaine=capitaine;
         //this.client=client;
         //this.enchere=enchere;
         this.statut=statut;

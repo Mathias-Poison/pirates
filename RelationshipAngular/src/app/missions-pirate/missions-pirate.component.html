@@ -80,56 +80,29 @@
 			  <thead>
 			    <tr>
 			      <th>Numero</th>
-			      <th>Client</th>
-			      <th>Montant de base</th>
-			      <th>Créée le</th>
-			      <th>Dernière enchère</th>
+			      <th>Libelle</th>
+			      <th>Duree</th>
+			      <th>Lieu</th>
+            <th>Difficulté</th>
 			      <th>Proposée le</th>
-			      <th>Finit dans</th>
-			      <th>Plus d'info<br/>Enchérir</th>
+			      <th>Statut</th>
+            <th>Enchérir</th>
 			    </tr>
 			  </thead>
-			  <tbody colspan="8">
-			    <tr>
-			      <td>1</td>
-			      <td>John Doe</td>
-			      <td>100 €</td>
-			      <td>22/03/2023</td>
-			      <td>150 €</td>
-			      <td>23/03/2023</td>
-			      <td>2 jours</td>
-			      <td><a href="encheres/1"><img src="assets/img/plus2.png" alt="voir plus" align="center" height="30px"></a></td>
+  <tbody colspan="8">
+			    <tr *ngFor="let m of missions">
+			      <td>{{m.id}}</td>
+			      <td>{{m.libelle}}</td>
+			      <td>{{m.duree}}</td>
+			      <td>{{m.lieu}}</td>
+            <td>{{m.difficulte}}</td>
+            <td>{{m.date}}</td>
+            <td>{{m.statut}}</td>
+			      <td><a [routerLink]="['/encherir', m.id]"><img src="assets/img/plus2.png" alt="voir plus" align="center" height="30px"></a></td>
 			    </tr>
-<tr class="extra-info">
-  <td colspan="8">Capitaine, mon capitaine On a besoin de vous pour nous guider</td>
-</tr>
-
-			    <tr>
-			      <td>2</td>
-			      <td>Jane Doe</td>
-			      <td>50 €</td>
-      <td>21/03/2023</td>
-      <td>75 €</td>
-      <td>22/03/2023</td>
-      <td>1 jour</td>
-      <td><a href="encheres/1"><img src="assets/img/plus2.png" alt="voir plus" align="center" height="30px"></a></td>
-    </tr>
-    <tr class="extra-info">
-      <td colspan="8">Retrouvez les bâtonnets de colins, croustillants et savoureux, tout l'or du capitaine! </td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Jane Doe</td>
-      <td>50 €</td>
-      <td>21/03/2023</td>
-      <td>75 €</td>
-      <td>22/03/2023</td>
-      <td>1 jour</td>
-      <td><a href="encheres/1"><img src="assets/img/plus2.png" alt="voir plus" align="centrer" height="30px"></a></td>
-    </tr>
-    <tr class="extra-info">
-      <td colspan="8">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
-    </tr>
+    <!-- <tr class="extra-info">
+    <td colspan="8">Capitaine, mon capitaine On a besoin de vous pour nous guider</td>
+      </tr> à remettre dans la V1 --> 
   </tbody>
 </table>
 		
