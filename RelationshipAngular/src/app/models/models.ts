@@ -105,6 +105,6 @@ export class Enchere {
 }
 
 export enum Statut{
-    EnAttente,EnCours,Termine
+    EnAttente,EnCours,Terminee
 }
 

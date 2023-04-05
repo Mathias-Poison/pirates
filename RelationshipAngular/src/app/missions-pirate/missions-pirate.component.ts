@@ -9,8 +9,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./missions-pirate.component.css']
 })
 export class MissionsPirateComponent {
-  
-
   missions: Array<Mission> = new Array<Mission>();
 
   constructor(private missionService: MissionsPirateHttpService, private router: Router) {

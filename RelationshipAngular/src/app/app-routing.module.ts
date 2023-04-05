@@ -7,7 +7,12 @@ import { MissionsPirateComponent } from './missions-pirate/missions-pirate.compo
 import { EncherirComponent } from './encherir/encherir.component';
 import { PirateMenuComponent } from './pirate-menu/pirate-menu.component';
 import { ClientMenuComponent } from './client-menu/client-menu.component';
+<<<<<<< Updated upstream
 import { EncheresComponent } from './encheres/encheres.component';
+=======
+import { AccueilComponent } from './accueil/accueil.component';
+import { MissionsClientComponent } from './missions-client/missions-client.component';
+>>>>>>> Stashed changes
 
 const routes: Routes = [  
 {path: "inscription", component: InscriptionComponent},
@@ -17,6 +22,11 @@ const routes: Routes = [
 {path: "encherir/:id", component: EncherirComponent},
 {path: "pirate-menu", component: PirateMenuComponent},
 {path: "client-menu", component: ClientMenuComponent},
+<<<<<<< Updated upstream
+=======
+{path: "missions-client", component: MissionsClientComponent},
+{path: "", component: AccueilComponent, pathMatch: 'full'}
+>>>>>>> Stashed changes
 ];
 
 @NgModule({
