@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Enchere, Mission } from '../models/models';
 import { MissionsPirateHttpService } from '../missions-pirate/missions-pirate-http.service';
 import { LoginService } from '../login.service';
+import { EncheresHttpService } from '../encheres/encheres-http.service';
+
 
 @Component({
   selector: 'app-encherir',
@@ -10,7 +12,14 @@ import { LoginService } from '../login.service';
   styleUrls: ['./encherir.component.css']
 })
 export class EncherirComponent implements OnInit{
-  constructor(private route: ActivatedRoute, private missionHttpservice : MissionsPirateHttpService, private loginService : LoginService) {}
+  constructor(
+    private route: ActivatedRoute, 
+    private missionHttpservice : MissionsPirateHttpService, 
+    private loginService : LoginService,
+    private encheresService: EncheresHttpService,
+    private router : Router,
+
+    ) {}
   mission: Mission=null;
   enchere: Enchere=null;
   enchereForm: number;
@@ -26,11 +35,14 @@ export class EncherirComponent implements OnInit{
     }); 
   }
   encherir(){
-    this.enchere.prix=this.enchereForm;
-    this.enchere.date=new Date(Date.now());
-    this.enchere.capitaine=this.loginService.compte;
-    this.enchere.mission=this.mission;
-    
+    let enchere : Enchere = new Enchere();
+    enchere.prix=this.enchereForm;
+    enchere.date=new Date(Date.now());
+    enchere.capitaine=this.loginService.compte;
+    enchere.mission=this.mission;
+    this.encheresService.create(enchere);
+    console.log(enchere);
+    this.router.navigate(['/encheres']);
   }
 
 }
