@@ -15,6 +15,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CompteHttpService } from './compte-http.service';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ClientMenuComponent } from './client-menu/client-menu.component';
+import { MissionsClientComponent } from './missions-client/missions-client.component';
 import { EncheresComponent } from './encheres/encheres.component';
 
 @NgModule({
@@ -28,6 +29,7 @@ import { EncheresComponent } from './encheres/encheres.component';
     EncherirComponent,
     AccueilComponent,
     ClientMenuComponent,
+    MissionsClientComponent,
     EncheresComponent,
     
   ],
