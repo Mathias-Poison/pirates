@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Capitaine, Compte } from './models/models';
+import { Compte } from './models/models';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class CompteHttpService {
   private comptes: Array<Compte> = new Array<Compte>();
-  private capitaines: Array<Capitaine> = new Array<Capitaine>();
+  //private capitaines: Array<Capitaine> = new Array<Capitaine>();
   compte:any;
   // private clients: Array<Client> = new Array<Client>();
   constructor(private http: HttpClient) { }

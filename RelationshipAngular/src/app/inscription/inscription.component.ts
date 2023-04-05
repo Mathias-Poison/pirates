@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Capitaine, Client, Compte } from '../models/models';
+import { Compte } from '../models/models';
 import { CompteHttpService } from '../compte-http.service';
 import { Router } from '@angular/router';
 
@@ -82,7 +82,7 @@ export class InscriptionComponent implements OnInit {
     if (type === "Capitaine"){
       console.log(this.capitaineInscriptionForm.value)
 
-      let cap : Capitaine = new Capitaine();
+      let cap : Compte = new Compte();
       
           cap.login = this.capitaineInscriptionForm.value.login;
           cap.password = this.capitaineInscriptionForm.value.password;
@@ -96,7 +96,7 @@ export class InscriptionComponent implements OnInit {
     else if (type === "Client"){
       console.log(this.clientInscriptionForm.value)
 
-      let cli : Client = new Client();
+      let cli : Compte = new Compte();
 
       cli.login = this.clientInscriptionForm.value.login;
       cli.password = this.clientInscriptionForm.value.password;
