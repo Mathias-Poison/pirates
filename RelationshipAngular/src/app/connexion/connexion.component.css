@@ -12,6 +12,15 @@ a:hover {
   cursor: url('/assets/hook.cur'), pointer;
 }
 
+.nav-link{
+  margin: 9%;
+  color: white;
+  cursor: url('/assets/hook.cur'), pointer;
+}
+
+.texte{
+  color: white;
+}
 img {
   position: absolute;
   top: 50%;
@@ -31,7 +40,7 @@ form {
 }
 
 form input[type="text"], form input[type="password"] {
-  font-family: "Roboto", sans-serif;
+  font-family: "Livvic", sans-serif;
   outline: 0;
   background: #ffffff;
   width: 100%;
@@ -44,7 +53,7 @@ form input[type="text"], form input[type="password"] {
 }
 
 form button[type="submit"] {
-  font-family: "Roboto", sans-serif;
+  font-family: "Livvic", sans-serif;
   outline: 0;
   background: #ff3e3b;
   width: 100%;
@@ -77,6 +86,7 @@ form button[type="submit"]:focus {
 }
 
 .input-container input:focus ~ label,
-.input-container input:valid ~ label {
+.input-container input:not(:placeholder-shown) ~ label {
   display: none;
 }
+

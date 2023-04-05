@@ -16,8 +16,8 @@
           <div *ngIf="submitted && usernameCtrl?.hasError" class="invalid-feedback">
             <div *ngIf="usernameCtrl.dirty || usernameCtrl?.hasError('required')" style="color: red; font-weight: bold;">nom d'utilisateur obligatoire !</div>
         </div>
-          <input type="text" name="username" formControlName="username" class="form-control" >
-          <label for="username" class="label">Identifiant</label>
+          <input type="text" name="username" formControlName="username" class="form-control" placeholder="Identifiant">
+          <label for="username" class="label" color="black"></label>
           <div class="bar"></div>
         </div>
         <div class="input-container">
@@ -25,17 +25,18 @@
             <div *ngIf="passwordCtrl.dirty || passwordCtrl?.hasError('required')" style="color: red; font-weight: bold;">mot de passe obligatoire !</div>
         </div>
 
-          <input type="password" name="password" formControlName="password" class="form-control" >
+          <input type="password" name="password" formControlName="password" class="form-control" placeholder="Mot de passe">
 
-          <label for="password" class="label">Mot de passe</label>
+          <label for="password" class="label"></label>
           <div class="bar"></div>
         </div>
         <div class="form-group">
         <button type="submit"><span>Connexion</span><span id="submit-button"></span></button>
       </div>
+      <br/>
       <div>
-        <a class="nav-link" [routerLink]="['/inscription']" routerLinkActive="active">Pas encore inscrit moussaillon ? Fonce donc marin d'eau douce !</a>
-   </div>
+        <a class="nav-link" [routerLink]="['/inscription']" routerLinkActive="active">Pas encore inscrit moussaillon? Fonce donc marin d'eau douce!</a>
+      </div>
       </form>
     </div>
   </div> 
