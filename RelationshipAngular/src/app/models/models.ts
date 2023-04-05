@@ -78,6 +78,21 @@ export class Mission{
     }
 }
 
+export class Enchere {
+    id:number;
+    prix: number;
+    date: Date;
+    capitaine: Capitaine;
+    mission: Mission;
+    constructor(id?: number, prix?:number, date?:Date, capitaine?:Capitaine,mission?:Mission){
+        this.id=id;
+        this.prix=prix;
+        this.date = date;
+        this.capitaine=capitaine;
+        this.mission=mission;
+    }
+}
+
 export enum Statut{
     EnAttente,EnCours,Termine
 }
