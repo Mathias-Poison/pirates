@@ -6,3 +6,4 @@ target/
 .DS_Store
 env.development.local
 app.log
+pirate_back/app.log.2023-04-04.0.gz
