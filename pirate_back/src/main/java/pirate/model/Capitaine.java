@@ -11,7 +11,7 @@ import jakarta.persistence.OneToMany;
 import pirate.controller.api.Views;
 
 @Entity
-@DiscriminatorValue("Capitaine")
+@DiscriminatorValue("capitaine")
 public class Capitaine extends Compte {
 
 	@JsonView(Views.Capitaine.class)
@@ -56,8 +56,7 @@ public class Capitaine extends Compte {
 
 	@Override
 	public String toString() {
-		return "Capitaine [pseudonyme=" + pseudonyme + ", tauxReussite=" + tauxReussite + ", missions=" + missions
-				+ ", encheres=" + encheres + "]";
+		return "Capitaine [pseudonyme=" + pseudonyme + ", tauxReussite=" + tauxReussite + "]";
 	}
 
 	

@@ -28,7 +28,7 @@ export class EncherirComponent implements OnInit{
   encherir(){
     this.enchere.prix=this.enchereForm;
     this.enchere.date=new Date(Date.now());
-    this.enchere.capitaine=this.loginService.cap;
+    this.enchere.capitaine=this.loginService.compte;
     this.enchere.mission=this.mission;
     
   }

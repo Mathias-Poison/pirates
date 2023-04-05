@@ -80,7 +80,14 @@ public class CompteApiController {
 		Compte compte = this.daoCompte.findById(id).orElseThrow(CompteNotFoundException::new);
 		CompteResponse resp = new CompteResponse();
 
-		BeanUtils.copyProperties(compte, resp);
+		
+		
+		if(compte.getType_compte().contentEquals("capitaine")) {
+			System.out.println(compte);
+			BeanUtils.copyProperties((Capitaine)compte, resp);
+		} else {
+			BeanUtils.copyProperties((Client)compte, resp);
+		}
 
 		return resp;
 	}
