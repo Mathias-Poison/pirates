@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { CompteHttpService } from '../compte-http.service';
 import { Compte } from '../models/models';
 import { LoginService } from '../login.service';
@@ -9,9 +9,12 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-connexion',
   templateUrl: './connexion.component.html',
-  styleUrls: ['./connexion.component.css']
+  styleUrls: ['./connexion.component.css'],
 })
+
+
 export class ConnexionComponent implements OnInit{
+
 
 
   loginForm: FormGroup;
@@ -44,7 +47,7 @@ export class ConnexionComponent implements OnInit{
         compte => {
           console.log(compte); // Utiliser la valeur de compte ici
           if(compte.type_compte=="capitaine"){
-            this.router.navigate(['/missions-pirate']);
+            this.router.navigate(['/pirate-menu']);
           }
           else if (compte.type_compte=="client"){
             this.router.navigate(['/client-menu']);
