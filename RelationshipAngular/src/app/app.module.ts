@@ -14,6 +14,7 @@ import { ConnexionHttpService } from './connexion/connexion-http.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CompteHttpService } from './compte-http.service';
 import { AccueilComponent } from './accueil/accueil.component';
+import { ClientMenuComponent } from './client-menu/client-menu.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AccueilComponent } from './accueil/accueil.component';
     MissionsPirateComponent,
     EncherirComponent,
     AccueilComponent,
+    ClientMenuComponent,
     
   ],
   imports: [

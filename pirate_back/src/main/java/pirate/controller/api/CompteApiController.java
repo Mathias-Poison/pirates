@@ -121,6 +121,7 @@ public class CompteApiController {
 			return this.daoCompte.save(capitaine);
 		}
 		else if(compteRequest.getType_compte().equals("client")) {
+			System.out.println("rentre dans client");
 			Client client = new Client(compteRequest.getAge(), compteRequest.getLogin(), compteRequest.getPassword(), compteRequest.getNom(), 
 					compteRequest.getPrenom(),compteRequest.getType_compte(), compteRequest.getEmail());
 			return this.daoCompte.save(client);

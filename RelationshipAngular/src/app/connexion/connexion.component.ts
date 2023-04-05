@@ -43,7 +43,12 @@ export class ConnexionComponent implements OnInit{
       .subscribe(
         compte => {
           console.log(compte); // Utiliser la valeur de compte ici
-          this.router.navigate(['/missions-pirate']);
+          if(compte.type_compte=="capitaine"){
+            this.router.navigate(['/missions-pirate']);
+          }
+          else if (compte.type_compte=="client"){
+            this.router.navigate(['/client-menu']);
+          }
         });
     }
 }

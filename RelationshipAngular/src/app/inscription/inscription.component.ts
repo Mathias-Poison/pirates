@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Capitaine, Compte } from '../models/models';
+import { Capitaine, Client, Compte } from '../models/models';
 import { CompteHttpService } from '../compte-http.service';
 import { Router } from '@angular/router';
 
@@ -93,8 +93,21 @@ export class InscriptionComponent implements OnInit {
           this.compteHttpService.create(cap);
           this.router.navigate(['/connexion']);
     }
-    else{
+    else if (type === "Client"){
       console.log(this.clientInscriptionForm.value)
+
+      let cli : Client = new Client();
+
+      cli.login = this.clientInscriptionForm.value.login;
+      cli.password = this.clientInscriptionForm.value.password;
+      cli.age = this.clientInscriptionForm.value.age;
+      cli.nom = this.clientInscriptionForm.value.nom;
+      cli.prenom = this.clientInscriptionForm.value.prenom;
+      cli.email = this.clientInscriptionForm.value.email;
+      cli.type_compte = "client";
+      this.compteHttpService.create(cli);
+      this.router.navigate(['/connexion']);
+
     }
   }
 

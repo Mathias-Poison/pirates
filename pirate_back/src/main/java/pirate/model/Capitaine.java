@@ -17,7 +17,7 @@ public class Capitaine extends Compte {
 	@JsonView(Views.Capitaine.class)
 	private String pseudonyme ;
 	
-	@Column(name="taux_reussite", nullable=false)
+	@Column(name="taux_reussite")
 	@JsonView(Views.Capitaine.class)
 	private int tauxReussite ;
 	

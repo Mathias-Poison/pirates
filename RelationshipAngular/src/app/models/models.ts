@@ -32,6 +32,23 @@ export class Capitaine extends Compte {
     }
 }
 
+export class Client extends Compte {
+
+    nom: string;
+    prenom: string;
+    missions: Array<Mission>;
+    //encheres: Array<Enchere>;
+
+    constructor(id?: number, age?: number, login?: string, password?: string, type_compte?: string, nom?: string, prenom?: string, missions?: Array<Mission>) {
+        super(id, age, login, password, type_compte);
+
+        this.nom = nom;
+        this.prenom = prenom;
+        this.missions = missions;
+       // this.encheres = encheres;
+    }
+}
+
 export class Mission{
     id: number;
     libelle: string;

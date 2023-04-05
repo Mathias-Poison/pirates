@@ -11,6 +11,14 @@ public class CompteResponse {
 	protected String email;
 	protected String type_compte;
 	
+	
+	
+	public String getType_compte() {
+		return type_compte;
+	}
+	public void setType_compte(String type_compte) {
+		this.type_compte = type_compte;
+	}
 	public String getEmail() {
 		return email;
 	}
