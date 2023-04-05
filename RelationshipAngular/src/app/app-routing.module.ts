@@ -7,9 +7,7 @@ import { MissionsPirateComponent } from './missions-pirate/missions-pirate.compo
 import { EncherirComponent } from './encherir/encherir.component';
 import { PirateMenuComponent } from './pirate-menu/pirate-menu.component';
 import { ClientMenuComponent } from './client-menu/client-menu.component';
-<<<<<<< Updated upstream
 import { EncheresComponent } from './encheres/encheres.component';
-=======
 import { AccueilComponent } from './accueil/accueil.component';
 import { MissionsClientComponent } from './missions-client/missions-client.component';
 

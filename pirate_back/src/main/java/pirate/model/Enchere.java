@@ -36,31 +36,74 @@ public class Enchere {
 	public Enchere() {
 	}
 	
-	public Enchere(double prix, LocalDate date, Integer id) {
+	
+	public Enchere(Integer id, double prix, LocalDate date, Capitaine capitaine, Mission mission) {
+		super();
+		this.id = id;
 		this.prix = prix;
 		this.date = date;
+		this.capitaine = capitaine;
+		this.mission = mission;
 	}
+
+
+	public Integer getId() {
+		return id;
+	}
+
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 
 	public double getPrix() {
 		return prix;
 	}
 
+
 	public void setPrix(double prix) {
 		this.prix = prix;
 	}
+
 
 	public LocalDate getDate() {
 		return date;
 	}
 
+
 	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 
+
+	public Capitaine getCapitaine() {
+		return capitaine;
+	}
+
+
+	public void setCapitaine(Capitaine capitaine) {
+		this.capitaine = capitaine;
+	}
+
+
+	public Mission getMission() {
+		return mission;
+	}
+
+
+	public void setMission(Mission mission) {
+		this.mission = mission;
+	}
+
+
 	@Override
 	public String toString() {
-		return "Enchere [prix=" + prix + ", date=" + date + "]";
+		return "Enchere [id=" + id + ", prix=" + prix + ", date=" + date + ", capitaine=" + capitaine + ", mission="
+				+ mission + "]";
 	}
+
+
 	
 	
 	

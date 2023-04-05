@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Enchere, Mission } from '../models/models';
 import { MissionsPirateHttpService } from '../missions-pirate/missions-pirate-http.service';

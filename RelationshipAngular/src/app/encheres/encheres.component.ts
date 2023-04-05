@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Enchere } from '../models/models';
 import { EncheresHttpService } from './encheres-http.service';
 import { Router } from '@angular/router';
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './encheres.component.html',
   styleUrls: ['./encheres.component.css']
 })
-export class EncheresComponent {
+export class EncheresComponent implements OnInit{
 
 
   
@@ -19,5 +19,6 @@ export class EncheresComponent {
   }
   ngOnInit() {
     this.encheres= this.encheresService.findAll();
+    console.log(this.encheres);
   }
 }

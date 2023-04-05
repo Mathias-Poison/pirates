@@ -2,6 +2,7 @@ package pirate.controller.api;
 
 import java.util.List;
 
+import org.hibernate.Hibernate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
@@ -22,6 +23,7 @@ import pirate.dao.IDAOEnchere;
 import pirate.exception.EnchereBadRequestException;
 import pirate.exception.EnchereNotFoundException;
 import pirate.model.Enchere;
+import pirate.model.Mission;
 import pirate.model.Enchere;
 import pirate.request.EnchereRequest;
 import pirate.response.EnchereResponse;
@@ -37,7 +39,13 @@ public class EnchereApiController {
 	@GetMapping
 	@JsonView(Views.Enchere.class)
 	public List<Enchere> findAll() {
-		return this.daoEnchere.findAll();
+		List <Enchere> encheres= daoEnchere.findAll();
+		
+		for(Enchere e : encheres)
+		{
+			Hibernate.initialize(e.getMission());
+		}		
+		return encheres;
 	}
 	
 	//Find by Id
