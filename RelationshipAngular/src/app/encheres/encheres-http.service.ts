@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class EnchereHttpService {
+export class EncheresHttpService {
 
  
   constructor(private http: HttpClient) { }
@@ -16,10 +16,6 @@ export class EnchereHttpService {
 
   findAll(): Array<Enchere>{
     return this.encheres;
-  }
-
-  findByLoginAndPassword(login: string, password:string) : Observable<Enchere>{
-    return this.http.get<Enchere>("http://localhost:8080/api/enchere/connexion/"+ login + "/" + password);
   }
 
   findById(id: number): Observable<Enchere> {

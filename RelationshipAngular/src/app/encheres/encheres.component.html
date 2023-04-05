@@ -1,1 +1,19 @@
 <p>encheres works!</p>
+<table>
+    <thead>
+      <tr>
+        <th>Numero</th>
+        <th>prix</th>
+        <th>date</th>
+        <th>mission</th>
+      </tr>
+    </thead>
+    <tbody colspan="8">
+      <tr *ngFor="let e of encheres">
+        <td>{{e.id}}</td>
+        <td>{{e.prix}}</td>
+        <td>{{e.date}}</td>
+        <td>{{e.mission.libelle}}</td>
+        </tr>
+    </tbody>
+</table>
