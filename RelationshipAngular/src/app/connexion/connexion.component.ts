@@ -42,17 +42,7 @@ export class ConnexionComponent implements OnInit{
           return;
       }
 
-      this.loginService.authentifier(this.loginForm.get('username').value,this.loginForm.get('password').value)
-      .subscribe(
-        compte => {
-          console.log(compte); // Utiliser la valeur de compte ici
-          if(compte.type_compte=="capitaine"){
-            console.log();
-            this.router.navigate(['/pirate-menu']);
-          }
-          else if (compte.type_compte=="client"){
-            this.router.navigate(['/client-menu']);
-          }
-        });
+      this.loginService.authentifier(this.loginForm.get('username').value,this.loginForm.get('password').value);
+     
     }
 }

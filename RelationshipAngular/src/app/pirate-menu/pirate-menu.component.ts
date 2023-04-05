@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { LoginService } from '../login.service';
+import { Compte } from '../models/models';
 
 @Component({
   selector: 'app-pirate-menu',
@@ -9,13 +10,7 @@ import { LoginService } from '../login.service';
 export class PirateMenuComponent {
   constructor(private loginService : LoginService) {
 
-//this.loginService.cap.pseudonyme;
-
-
-
-
-    
   }
-
+capitaine: Compte = this.loginService.compte;
 
 }
