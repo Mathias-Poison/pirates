@@ -47,6 +47,7 @@ export class ConnexionComponent implements OnInit{
         compte => {
           console.log(compte); // Utiliser la valeur de compte ici
           if(compte.type_compte=="capitaine"){
+            console.log();
             this.router.navigate(['/pirate-menu']);
           }
           else if (compte.type_compte=="client"){

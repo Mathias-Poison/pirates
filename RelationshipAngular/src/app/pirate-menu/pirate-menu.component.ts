@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-pirate-menu',
@@ -6,6 +7,15 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./pirate-menu.component.css']
 })
 export class PirateMenuComponent {
+  constructor(private loginService : LoginService) {
+
+//this.loginService.cap.pseudonyme;
+
+
+
+
+    
+  }
 
 
 }
