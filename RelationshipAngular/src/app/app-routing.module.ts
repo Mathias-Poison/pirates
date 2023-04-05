@@ -7,7 +7,7 @@ import { MissionsPirateComponent } from './missions-pirate/missions-pirate.compo
 import { EncherirComponent } from './encherir/encherir.component';
 import { PirateMenuComponent } from './pirate-menu/pirate-menu.component';
 import { ClientMenuComponent } from './client-menu/client-menu.component';
-import { AccueilComponent } from './accueil/accueil.component';
+import { EncheresComponent } from './encheres/encheres.component';
 
 const routes: Routes = [  
 {path: "inscription", component: InscriptionComponent},
@@ -17,8 +17,6 @@ const routes: Routes = [
 {path: "encherir/:id", component: EncherirComponent},
 {path: "pirate-menu", component: PirateMenuComponent},
 {path: "client-menu", component: ClientMenuComponent},
-{path: "missions-client", component: MissionsPirateComponent},
-{path: "", component: AccueilComponent, pathMatch: 'full'}
 ];
 
 @NgModule({
