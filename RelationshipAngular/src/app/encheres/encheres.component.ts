@@ -21,4 +21,9 @@ export class EncheresComponent implements OnInit{
     this.encheres= this.encheresService.findAll();
     console.log(this.encheres);
   }
-}
+ 
+    list(): Array<Enchere> {
+      return this.encheresService.findAll();
+    }
+  }
+

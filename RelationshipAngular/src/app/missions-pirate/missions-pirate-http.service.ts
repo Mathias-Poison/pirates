@@ -8,17 +8,22 @@ import { HttpClient } from '@angular/common/http';
 export class MissionsPirateHttpService {
   
 
-  m1=new Mission(3,"Retrouver Maurice",2,"Chez Mathias",1,null,null)
-  m2=new Mission(4,"Retrouver Maurice",2,"Chez Mathias",1,null,Statut.EnCours)
-  m3=new Mission(5,"Retrouver Maurice",2,"Chez Mathias",1,null,Statut.EnCours)
+  missions: Array<Mission> = new Array<Mission>();
 
-  missions: Array<Mission> = new Array<Mission>(this.m1, this.m2, this.m3);
+  private missionApiPath: string;
 
   constructor(private http : HttpClient) {
-  
+    this.missionApiPath = "http://localhost:8080/api" + "/mission";
+    this.load();
   }
  
   findAll(): Array<Mission>{
     return this.missions;
   }
+
+  private load(): void {
+  this.http.get<Array<Mission>>(this.missionApiPath).subscribe(resp => {
+      this.missions = resp;
+  })
+}
 }

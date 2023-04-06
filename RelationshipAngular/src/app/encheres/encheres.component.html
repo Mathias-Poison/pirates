@@ -1,4 +1,35 @@
-<p>encheres works!</p>
+<div class="background">
+	<!-- Menu -->
+	<div id="menu">
+		<div id="logo">
+			<img src="assets/img/logob.png" alt="Logo" height="80px">
+		</div>
+		<div id="search">
+			<form>
+				<span><img src="assets/img/loupe.png" alt="recherche"></span>
+				<input type="text" placeholder="Rechercher...">
+				<button type="submit"><img src="assets/img/submit.png" alt="Submit"></button>
+			</form>
+		</div>
+
+		<div id="icons">
+			<a href="#" class="menu-link"><img src="assets/img/menu_accueil.png" alt="Accueil"
+					class="overlay-accueil"></a>
+			<a href="#" class="menu-link"><img src="assets/img/menu_enchere.png" alt="Enchères"
+					class="overlay-enchere"></a>
+			<a href="#" class="menu-link"><img src="assets/img/menu_missions.png" alt="Mission"
+					class="overlay-mission"></a>
+			<a href="#" class="menu-link"><img src="assets/img/menu_plus.png" alt="Plus" class="overlay-plus"></a>
+		</div>
+	</div>
+	<div class="container">
+		<div class="text-container">
+			Missions
+		</div>
+		<div class="image-container">
+			<img src="assets/img/enchere.png" alt="Enchère Image">
+		</div>
+	</div>
 <table>
     <thead>
       <tr>
@@ -9,7 +40,7 @@
       </tr>
     </thead>
     <tbody colspan="8">
-      <tr *ngFor="let e of encheres">
+      <tr *ngFor="let e of list()">
         <td>{{e.id}}</td>
         <td>{{e.prix}}</td>
         <td>{{e.date}}</td>
@@ -17,3 +48,4 @@
         </tr>
     </tbody>
 </table>
+</div>
