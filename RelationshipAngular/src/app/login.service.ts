@@ -21,10 +21,10 @@ export class LoginService {
         delete cmpt.password;
         sessionStorage.setItem('connected', JSON.stringify(cmpt));
         if(cmpt.type_compte=="capitaine") {
-          this.router.navigate(['/pirate-menu']);
+          this.router.navigate(['/missions-pirate']);
         }
         else if (cmpt.type_compte=="client"){
-          this.router.navigate(['/client-menu']);
+          this.router.navigate(['/missions-client']);
         }
       });
   }

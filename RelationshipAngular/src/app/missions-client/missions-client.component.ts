@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Mission } from '../models/models';
+import { Compte, Mission } from '../models/models';
 import { MissionsClientHttpService } from './missions-client-http.service';
 
 @Component({
@@ -10,9 +10,18 @@ import { MissionsClientHttpService } from './missions-client-http.service';
 })
 export class MissionsClientComponent {
   missions: Array<Mission> = new Array<Mission>();
+  
+  compte = new Compte;
 
   constructor(private missionService: MissionsClientHttpService, private router: Router) {
-  
+    if(sessionStorage.getItem("connected")){
+
+    let compteobjet = JSON.parse(sessionStorage.getItem("connected"));
+    this.compte.prenom= compteobjet["prenom"];
+    this.compte.nom= compteobjet["nom"];
+
+
+  }
   }
   ngOnInit() {
     this.missions= this.missionService.findAll();
@@ -35,4 +44,7 @@ export class MissionsClientComponent {
   cancel(): void {
     this.missions = null;
   }
+
+
+
 }

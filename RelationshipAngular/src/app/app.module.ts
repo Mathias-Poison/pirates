@@ -17,6 +17,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { ClientMenuComponent } from './client-menu/client-menu.component';
 import { MissionsClientComponent } from './missions-client/missions-client.component';
 import { EncheresComponent } from './encheres/encheres.component';
+import { ErreurComponent } from './erreur/erreur.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { EncheresComponent } from './encheres/encheres.component';
     ClientMenuComponent,
     MissionsClientComponent,
     EncheresComponent,
+    ErreurComponent,
     
   ],
   imports: [
