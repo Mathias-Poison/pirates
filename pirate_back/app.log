@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 2023-04-05T10:16:55.191+02:00  INFO 7884 --- [restartedMain] pirate.PirateSpringBootApplication       : Starting PirateSpringBootApplication using Java 17.0.6 with PID 7884 (C:\Users\mathi\Desktop\Relationship\pirates\pirate_back\target\classes started by mathi in C:\Users\mathi\Desktop\Relationship\pirates\pirate_back)
 2023-04-05T10:16:55.204+02:00 DEBUG 7884 --- [restartedMain] pirate.PirateSpringBootApplication       : Running with Spring Boot v3.0.4, Spring v6.0.6
 2023-04-05T10:16:55.206+02:00  INFO 7884 --- [restartedMain] pirate.PirateSpringBootApplication       : No active profile set, falling back to 1 default profile: "default"
@@ -1488,3 +1489,32 @@ Caused by: org.hibernate.HibernateException: Unable to determine Dialect without
 	... 36 common frames omitted
 >>>>>>> Stashed changes
 
+=======
+2023-04-06T09:32:46.099+02:00  INFO 14028 --- [restartedMain] pirate.PirateSpringBootApplication       : Starting PirateSpringBootApplication using Java 17.0.6 with PID 14028 (C:\Users\mathi\Desktop\Relationship\pirates\pirate_back\target\classes started by mathi in C:\Users\mathi\Desktop\Relationship\pirates\pirate_back)
+2023-04-06T09:32:46.110+02:00 DEBUG 14028 --- [restartedMain] pirate.PirateSpringBootApplication       : Running with Spring Boot v3.0.4, Spring v6.0.6
+2023-04-06T09:32:46.111+02:00  INFO 14028 --- [restartedMain] pirate.PirateSpringBootApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-04-06T09:32:46.174+02:00  INFO 14028 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-04-06T09:32:46.175+02:00  INFO 14028 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-04-06T09:32:46.989+02:00  INFO 14028 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-06T09:32:47.084+02:00  INFO 14028 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82 ms. Found 4 JPA repository interfaces.
+2023-04-06T09:32:47.912+02:00  INFO 14028 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-06T09:32:47.930+02:00  INFO 14028 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-06T09:32:47.931+02:00  INFO 14028 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-04-06T09:32:48.046+02:00  INFO 14028 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-06T09:32:48.049+02:00  INFO 14028 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1872 ms
+2023-04-06T09:32:48.321+02:00  INFO 14028 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-06T09:32:48.412+02:00  INFO 14028 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-06T09:32:48.898+02:00  INFO 14028 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-06T09:32:49.298+02:00  INFO 14028 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7bf43fac
+2023-04-06T09:32:49.300+02:00  INFO 14028 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-06T09:32:49.396+02:00  INFO 14028 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-04-06T09:32:50.944+02:00  INFO 14028 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-06T09:32:50.958+02:00  INFO 14028 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-06T09:32:51.862+02:00  WARN 14028 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-06T09:32:52.295+02:00  INFO 14028 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-04-06T09:32:52.341+02:00  INFO 14028 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-06T09:32:52.357+02:00  INFO 14028 --- [restartedMain] pirate.PirateSpringBootApplication       : Started PirateSpringBootApplication in 6.795 seconds (process running for 7.325)
+2023-04-06T09:35:01.533+02:00  INFO 14028 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-06T09:35:01.534+02:00  INFO 14028 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-06T09:35:01.537+02:00  INFO 14028 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+>>>>>>> Stashed changes
