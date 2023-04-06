@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Livvic&display=swap');
+
 .background {
   background-image: url('/assets/back_fumee.png');
   background-repeat: repeat;
@@ -7,11 +10,15 @@
   margin: -9px;
   cursor: url('/assets/sabre.cur'), default;
 }
-
+a{
+  font-family: Livvic, Arial, Helvetica, sans-serif;
+}
 a:hover {
   cursor: url('/assets/hook.cur'), pointer;
 }
-
+.invalid-feedback{
+  font-family: Livvic, Arial, Helvetica, sans-serif;
+}
 .nav-link{
   margin: 9%;
   color: white;
