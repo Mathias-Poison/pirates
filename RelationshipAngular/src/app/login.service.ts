@@ -17,6 +17,7 @@ export class LoginService {
   authentifier(username:string, password:string) {
     this.httpCompte.findByLoginAndPassword(username, password).subscribe(
       cmpt => {
+        this.compte=cmpt;
         console.log(cmpt); // Utiliser la valeur de compte ici
         delete cmpt.password;
         sessionStorage.setItem('connected', JSON.stringify(cmpt));
