@@ -78,7 +78,6 @@
     top: 40%; /* placer le haut du tableau Ã  50% de la hauteur de la page */
     right: 72px; /* rÃ©gler la marge droite */
     display: table; /* remplacer "flex" par "table" */
-    display: flex;
   }
   th, td {
     border: none;
