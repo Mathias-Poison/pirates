@@ -68,7 +68,50 @@
     animation: explosion-appear 0s ease-out forwards 10s;
   }
   
+  table {
+    border-collapse: collapse;
+    font-family: "Livvic", arial;
+    color: white;
+    width: calc(100% - 1058px);
+    margin: 0 auto; /* centrer horizontalement */
+    position: absolute; /* utiliser une position absolue pour centrer verticalement */
+    top: 40%; /* placer le haut du tableau Ã  50% de la hauteur de la page */
+    right: 72px; /* rÃ©gler la marge droite */
+    display: table; /* remplacer "flex" par "table" */
+    display: flex;
+  }
+  th, td {
+    border: none;
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+    white-space: nowrap; /* add this line to prevent text wrapping */
+  }
   
+  
+  td,
+  th {
+    border: none;
+    padding: 8px;
+    text-align: left; /* Aligner le texte Ã  gauche */
+  }
+  
+  
+  th:first-child {
+    border-left: 4px solid white;
+  }
+  
+  td:first-of-type {
+    border-left: 4px solid #ff3e3b;
+    width: 150px; /* ajuster la largeur selon vos besoins */
+  }
+  thead {
+    height: 50px; /* hauteur fixe */
+  }
+  
+  tbody tr {
+    background-color: #2f2f2f;
+  }
   @keyframes rectangle-descend {
     0% {
       height: 0;
@@ -277,7 +320,7 @@
     background-color: white;
     width: calc(100vw - 1057px);
     height: calc(100vh - 50px);
-    margin: 0 100px;
+    /* margin: 0 100px; */
   }
   
   .text-container {

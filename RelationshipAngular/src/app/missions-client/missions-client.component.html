@@ -24,10 +24,7 @@
 	</div>
 	<div class="container">
 		<div class="text-container">
-		{{compte.prenom}} {{compte.nom}}
-		</div>
-		<div class="text-container">
-			Vos missions 
+			Missions
 		</div>
 		<div class="image-container">
 			<img src="assets/img/enchere.png" alt="Enchère Image">
@@ -38,7 +35,7 @@
 			<tr>
 				<!-- <th>Numero</th> -->
 				<th>Libelle</th>
-				<th>Duree (jours)</th>
+				<th>Duree</th>
 				<th>Lieu</th>
 				<th>Difficulté</th>
 				<th>Proposée le</th>
@@ -49,7 +46,7 @@
 			<tr *ngFor="let m of list()">
 				<!-- <td>{{m.id}}</td> -->
 				<td>{{m.libelle}}</td>
-				<td>{{m.duree}}</td>
+				<td>{{m.duree}} Jours</td>
 				<td>{{m.lieu}}</td>
 				<td>{{m.difficulte}}</td>
 				<td>{{m.date}}</td>

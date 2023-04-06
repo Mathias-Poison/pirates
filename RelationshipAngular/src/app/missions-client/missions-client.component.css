@@ -42,6 +42,7 @@
   table {
     border-collapse: collapse;
     font-family: "Livvic", arial;
+    font-size: 13px;
     color: white;
     width: calc(100% - 1058px);
     margin: 0 auto; /* centrer horizontalement */
