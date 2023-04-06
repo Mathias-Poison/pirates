@@ -101,50 +101,51 @@
                 <table>
 
                     <tr>
-                        <td><input required type="text" class="form-control" id="login" formControlName="login"
-                                placeholder="Saisir le login"></td>
-                        <span *ngIf="clientLoginCtrl.dirty && clientLoginCtrl?.hasError('required')"
+                        <td><span *ngIf="clientLoginCtrl.dirty && clientLoginCtrl?.hasError('required')"
                             class="text-danger">
                             Le login est obligatoire
-                        </span>
+                        </span><input required type="text" class="form-control" id="login" formControlName="login"
+                                placeholder="Saisir le login"></td>
                     </tr>
                     <tr id="inputNom">
-                        <td> <input required type="text" class="form-control" id="nom" name="nom"
-                                formControlName="nom" placeholder="Saisir votre nom"></td>
-                        <span *ngIf="clientNomCtrl.dirty && clientNomCtrl?.hasError('required')"
+                        <td> <span *ngIf="clientNomCtrl.dirty && clientNomCtrl?.hasError('required')"
                             class="text-danger">
                             Le nom est obligatoire
                         </span>
+                        <input required type="text" class="form-control" id="nom" name="nom"
+                                formControlName="nom" placeholder="Saisir votre nom"></td>
+                        
                     </tr>
                     <tr id="inputPrenom">
-                        <td> <input required type="text" class="form-control" id="prenom" name="prenom"
-                                formControlName="prenom" placeholder="Saisir votre prenom"></td>
-                        <span *ngIf="clientPrenomCtrl.dirty && clientPrenomCtrl?.hasError('required')"
+                        <td> 
+                            <span *ngIf="clientPrenomCtrl.dirty && clientPrenomCtrl?.hasError('required')"
                             class="text-danger">
                             Le prenom est obligatoire
-                        </span>
+                        </span><input required type="text" class="form-control" id="prenom" name="prenom"
+                                formControlName="prenom" placeholder="Saisir votre prenom"></td>
                     </tr>
                     <tr>
-                        <td><input required type="number" class="form-control" id="age" formControlName="age" placeholder="Saisir votre âge"></td>
-                        <span *ngIf="clientAgeCtrl.dirty && clientAgeCtrl?.hasError('required')" class="text-danger">
+                        <td>                        <span *ngIf="clientAgeCtrl.dirty && clientAgeCtrl?.hasError('required')" class="text-danger">
                             L'age obligatoire
                         </span>
+                        <input required type="number" class="form-control" id="age" formControlName="age" placeholder="Saisir votre âge"></td>
+
                     </tr>
                     <tr>
+                        <span *ngIf="clientEmailCtrl.dirty && clientEmailCtrl?.hasError('required')"
+                        class="text-danger">
+                        L'email est obligatoire
+                    </span>
+                    <span *ngIf="clientEmailCtrl.dirty && clientEmailCtrl?.hasError('email')" class="text-danger">
+                        L'email est invalide
+                    </span>
                         <td><input required type="text" class="form-control" id="email" formControlName="email"
                                 placeholder="Saisir votre adresse email"></td>
-                        <span *ngIf="clientEmailCtrl.dirty && clientEmailCtrl?.hasError('required')"
-                            class="text-danger">
-                            L'email est obligatoire
-                        </span>
-                        <span *ngIf="clientEmailCtrl.dirty && clientEmailCtrl?.hasError('email')" class="text-danger">
-                            L'email est invalide
-                        </span>
+
                     </tr>
 
                     <tr>
-                        <td><h4>Minimum 8 caractères, 1 majuscule ou 1 caractère spécial</h4> <input required type="password" class="form-control" id="password"
-                                formControlName="password" placeholder="Saisir le mot de passe"></td>
+                        <td>
                         <span *ngIf="clientPasswordCtrl.dirty && clientPasswordCtrl?.hasError('required')"
                             class="text-danger">
                             Le mot de passe est obligatoire
@@ -153,13 +154,16 @@
                             class="text-danger">
                             Le mot de passe n'est pas au bon format
                         </span>
+                        <h4>Minimum 8 caractères, 1 majuscule ou 1 caractère spécial</h4> <input required type="password" class="form-control" id="password"
+                                formControlName="password" placeholder="Saisir le mot de passe"> </td>
                     </tr>
-                    <td> <input required type="password" class="form-control" id="passwordConfirm"
+                    <td>                             <span *ngIf="clientPasswordCtrl.value != clientPasswordConfirmCtrl.value"
+                        class="text-danger">
+                        Le mot de passe et sa confirmation ne correspondent pas
+                    </span>
+                    <input required type="password" class="form-control" id="passwordConfirm"
                             formControlName="passwordConfirm" placeholder="Confirmer le mot de passe"></td>
-                            <span *ngIf="clientPasswordCtrl.value != clientPasswordConfirmCtrl.value"
-                            class="text-danger">
-                            Le mot de passe et sa confirmation ne correspondent pas
-                        </span>
+
                 </table>
                 <input class="btn btn-success" type="submit" value="S'inscrire Client" [disabled]="clientInscriptionForm.invalid">
 
