@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Compte, Mission } from '../models/models';
 import { MissionsClientHttpService } from './missions-client-http.service';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-missions-client',
@@ -13,33 +14,22 @@ export class MissionsClientComponent {
   
   compte = new Compte;
 
-  constructor(private missionService: MissionsClientHttpService, private router: Router) {
+  constructor(private missionService: MissionsClientHttpService, private router: Router, private loginService : LoginService) {
     if(sessionStorage.getItem("connected")){
 
     let compteobjet = JSON.parse(sessionStorage.getItem("connected"));
     this.compte.prenom= compteobjet["prenom"];
     this.compte.nom= compteobjet["nom"];
-
-
   }
   }
-  ngOnInit() {
-    this.missions= this.missionService.findAll();
-  }
-
+  
   list(): Array<Mission> {
-    return this.missionService.findAll();
+    return this.missionService.findAll().filter(m => m.client.id == this.loginService.getCompte().id);;
   }
 
-  // add(): void {
-  //   this.missions = new Mission()
-    
-  // }
-
-  // save(): void {
-  //     this.missionService.create(this.missions);
-  //   this.cancel();
-  // }
+    remove (id : number):void {
+      this.missionService.remove(id);
+    }
 
   cancel(): void {
     this.missions = null;

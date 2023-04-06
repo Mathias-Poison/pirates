@@ -23,9 +23,9 @@
 		</div>
 	</div>
 	<div class="container">
-		<div class="text-container"> Bonjour capitaine 
-     
-      </div>
+		<div class="text-container"> 
+			Bonjour capitaine
+		</div>
       <div class="text-container">
         Vos encheres
       </div>
@@ -40,6 +40,9 @@
         <th>prix</th>
         <th>date</th>
         <th>mission</th>
+		<th></th>
+		<th></th>
+		
       </tr>
     </thead>
     <tbody colspan="8">
@@ -47,7 +50,17 @@
         <td>{{e.id}}</td>
         <td>{{e.prix}}</td>
         <td>{{e.date}}</td>
-        <td>{{e.mission.libelle}}</td>
+        <td>{{e.mission.id}}-{{e.mission.libelle}}</td>
+		<td>
+			<div class="btn-group btn-group-sm">
+				<a class="btn btn-danger" (click)="remove(e.id)"><i class="bi bi-trash" style="color: crimson;">delete</i></a>
+			</div>
+		</td>
+		<td>
+			<div class="btn-group btn-group-sm">
+				<a class="btn btn-danger" (click)="rencherir(e.id, e.mission.id)"><i class="bi bi-trash" style="color: gold;">Renchérir</i></a>
+			</div>
+		</td>
         </tr>
     </tbody>
 </table>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Mission, Statut } from '../models/models';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,10 @@ export class MissionsPirateHttpService {
     this.load();
   }
  
+
+  findById(id: number): Observable<Mission> {
+    return this.http.get<Mission>("http://localhost:8080/api/mission" + "/" + id);
+  }
   findAll(): Array<Mission>{
     return this.missions;
   }

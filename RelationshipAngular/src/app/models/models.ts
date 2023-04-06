@@ -61,19 +61,21 @@ export class Compte {
 
 export class Mission{
     id: number;
+    client:Compte;
     libelle: string;
     duree: number;
     lieu: string;
     difficulte:number;
     date: Date;
     // capitaine: Capitaine;
-    //client:Client;
+   
     //enchere:Array<Enchere>;
     statut:Statut;
     //bateau:Bateau;
 
-    constructor(id?: number, libelle?: string, duree?: number, lieu?: string, difficulte?:number,date?: Date,statut?:Statut) {
+    constructor(id?: number, client?: Compte, libelle?: string, duree?: number, lieu?: string, difficulte?:number,date?: Date,statut?:Statut) {
         this.id = id;
+        this.client=client;
         this.libelle = libelle;
         this.duree=duree;
         this.lieu=lieu;

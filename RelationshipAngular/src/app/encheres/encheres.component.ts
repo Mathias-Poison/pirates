@@ -4,36 +4,36 @@ import { EncheresHttpService } from './encheres-http.service';
 import { Router } from '@angular/router';
 import { NgFor } from '@angular/common';
 import { LoginService } from '../login.service';
+import { MissionsPirateHttpService } from '../missions-pirate/missions-pirate-http.service';
 
 @Component({
   selector: 'app-encheres',
   templateUrl: './encheres.component.html',
   styleUrls: ['./encheres.component.css']
 })
-export class EncheresComponent implements OnInit{
+export class EncheresComponent{
 
 
   
-  encheres: Array<Enchere> = new Array<Enchere>();
+  
 
-  constructor(private encheresService: EncheresHttpService, private router: Router, private loginService : LoginService) {
+  constructor(private encheresService: EncheresHttpService, private router: Router, private loginService : LoginService, private missionService: MissionsPirateHttpService) {
   
   }
-  ngOnInit() {
-    this.encheres= this.encheresService.findAll();
-    console.log(this.encheres);
-  }
-
+ 
   list(): Array<Enchere> {
-    this.encheres.length = 0; 
-    let varEnchere: Array<Enchere> = this.encheresService.findAll();
-    for (let e of varEnchere) {
-      if (e.capitaine.id == this.loginService.compte.id) {
-        this.encheres.push(e);
-      }
-    }
-    return this.encheres;
+
+    console.log( this.loginService.getCompte);
+
+
+    return this.encheresService.findAll().filter(e => e.capitaine.id == this.loginService.getCompte().id);
 
   }
-
+  remove(id : number): void{
+    this.encheresService.remove(id);
+  }
+  rencherir(enchId : number, missId: number): void {
+    this.remove(enchId);
+    this.router.navigate(['/encherir', missId]);
+  }
 }

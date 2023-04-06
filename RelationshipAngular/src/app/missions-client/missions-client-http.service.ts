@@ -26,6 +26,12 @@ export class MissionsClientHttpService {
    }); 
   }
 
+  remove(id: number): void {
+    this.http.delete<boolean>("http://localhost:8080/api/mission" + "/" + id).subscribe(resp => {
+      this.load();
+    });
+  }
+
 private load(): void {
   this.http.get<Array<Mission>>(this.missionApiPath).subscribe(resp => {
       this.missions = resp;

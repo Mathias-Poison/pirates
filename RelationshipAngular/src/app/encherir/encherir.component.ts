@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { Enchere, Mission } from '../models/models';
+import { Compte, Enchere, Mission } from '../models/models';
 import { MissionsPirateHttpService } from '../missions-pirate/missions-pirate-http.service';
 import { LoginService } from '../login.service';
 import { EncheresHttpService } from '../encheres/encheres-http.service';
@@ -23,8 +23,10 @@ export class EncherirComponent implements OnInit{
     ) {}
   mission: Mission=null;
   enchere: Enchere=null;
+  bestOffre:number=null;
   enchereForm: number;
   private id:number;
+  compte:Compte=this.loginService.getCompte();
   
 
   ngOnInit() {
@@ -34,13 +36,28 @@ export class EncherirComponent implements OnInit{
       console.log(this.id);
       console.log(this.mission);
     }); 
+    this.comparer();
   }
+
+  comparer() {
+    let encheres: Array<Enchere> = this.encheresService.findAll().filter(e => e.mission.id == this.id);
+    console.log(encheres);
+    if (encheres.length > 0) {
+        let bestOffre: number = Infinity;
+        for (let e of encheres) {
+            if (e.prix < bestOffre) {
+                bestOffre = e.prix;
+            }
+        }
+        this.bestOffre = bestOffre;
+    } }
+
   encherir(){
     let enchere : Enchere = new Enchere();
     enchere.prix=this.enchereForm;
     enchere.date=new Date(Date.now());
-    enchere.capitaine=this.loginService.compte;
-    console.log(this.loginService.compte);
+    enchere.capitaine=this.loginService.getCompte();
+    console.log(this.loginService.getCompte());
     enchere.mission=this.mission;
     this.encheresService.create(enchere);
     console.log(enchere);

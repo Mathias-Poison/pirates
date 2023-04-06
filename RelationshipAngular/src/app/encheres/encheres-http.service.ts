@@ -9,9 +9,11 @@ import { Observable } from 'rxjs';
 export class EncheresHttpService {
 
  
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    this.load();
+  }
   
-  private encheres: Array<Enchere> = new Array<Enchere>();
+  encheres: Array<Enchere> = new Array<Enchere>();
   enchere:any;
 
   findAll(): Array<Enchere>{

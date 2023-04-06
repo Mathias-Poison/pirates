@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class LoginService {
   // private currentUserSubject: BehaviorSubject<Compte> = new BehaviorSubject<Compte>(null);
   // public connected: Observable<Compte> = this.currentUserSubject.asObservable();
-  public compte: Compte=null;
+  private compte: Compte=null;
   // public cli:Client:null;
   constructor(private httpCompte : CompteHttpService, private router: Router) { }
 
@@ -22,12 +22,22 @@ export class LoginService {
         delete cmpt.password;
         sessionStorage.setItem('connected', JSON.stringify(cmpt));
         if(cmpt.type_compte=="capitaine") {
-          this.router.navigate(['/missions-pirate']);
+          this.router.navigate(['/pirate-menu']);
         }
         else if (cmpt.type_compte=="client"){
           this.router.navigate(['/missions-client']);
         }
       });
+  }
+
+  public getCompte(): Compte {
+    if(this.compte) {
+      return this.compte;
+    } else if (sessionStorage.getItem("connected")){
+      return JSON.parse((sessionStorage.getItem("connected")));
+    }
+
+    return null;
   }
 
 }

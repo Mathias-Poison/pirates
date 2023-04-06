@@ -43,6 +43,7 @@
 				<th>Difficulté</th>
 				<th>Proposée le</th>
 				<th>Statut</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody colspan="8">
@@ -54,6 +55,11 @@
 				<td>{{m.difficulte}}</td>
 				<td>{{m.date}}</td>
 				<td>{{m.statut}}</td>
+				<td>
+					<div class="btn-group btn-group-sm">
+						<a class="btn btn-danger" (click)="remove(m.id)"><i class="bi bi-trash" style="color: crimson;">delete</i></a>
+					</div>
+				</td>
 			</tr>
 		</tbody>
 	</table>

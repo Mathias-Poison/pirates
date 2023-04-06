@@ -10,6 +10,9 @@
     <div id="logo">
       <img src="assets/img/logob.png" alt="Logo" height="80px">
     </div>
+    <div class="text-cont">
+      <h6> Capitaine {{compte.pseudonyme}}</h6>
+      </div>
     <div id="search">
       <form>
         <span><img src="assets/img/loupe.png" alt="recherche"></span>
@@ -27,8 +30,11 @@
   <div class="background">
     <div class="image-enchere">
     <div class="text-container">
-      Enchère
+      Enchères de la mission : {{mission.id}} - {{mission.libelle}}
     </div>
+    <div class="text-container2"><p *ngIf="bestOffre">La meilleure enchère est : {{bestOffre}} PO.</p><p *ngIf="!bestOffre">Soyez le premier à enchérir !</p>
+    </div>
+    
     <div class="image-container">
       <img src="assets/img/enchere.png" alt="Enchère Image">
     </div>
