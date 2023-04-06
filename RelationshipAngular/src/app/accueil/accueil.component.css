@@ -1,14 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Livvic&display=swap');
+
+.background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+}
+
+h4{
+    text-align: justify;
+    text-align-last: center;
+    color: white;
+    margin-right: 25%;
+    margin-left: 45%;
+    margin-top: 5%;
+    width: 40%;
+    text-align: justify;
+    text-justify: inter-word;
+    font-family: Livvic;
+}
+
+.bienvenue{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.bateau{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+/* styles pour l'image bob */
+.bob {
+    position: absolute;
+    right: 5%;
+    height: 350px;
+}
+
+.bob2 {
+    position: absolute;
+    right: 5%;
+    height: 350px;
+    display: none; /* on cache l'image par défaut */
+}
+
+/* styles pour l'image chad */
+.chad {
+    margin-left: 130%;
+    height: 350px;
+}
+
+.chad2 {
+    margin-left: 130%;
+    height: 350px;
+    display: none; /* on cache l'image par défaut */
+}
+
+/* styles au survol de la souris */
+.connexion:hover .chad {
+    display: none;
+}
+
+.connexion:hover .chad2 {
+    display: inline;
+}
+
+.inscription{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.bob{
+    position: absolute;
+    right: 5%;
+    height: 350px;
+}
+
+.bob2{
+    position: absolute;
+    right: 5%;
+    height: 350px;
+    display: none;
+}
+
+.inscription:hover .bob {
+    display: none;
+}
+
+.inscription:hover .bob2 {
+    display: block;
+}
+
 .connexion{
     display: flex;
     flex-direction: column;
 }
+
 .inscription{
     display: flex;
     flex-direction: column;
 }
+
 .doubleBlock{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    height: 100%;
+    height: 40%;
+    margin-left: 10%;
+      
+}
+
+.red{
+    color: red;
 }
