@@ -1518,3 +1518,30 @@ Caused by: org.hibernate.HibernateException: Unable to determine Dialect without
 2023-04-06T09:35:01.534+02:00  INFO 14028 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2023-04-06T09:35:01.537+02:00  INFO 14028 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
 >>>>>>> Stashed changes
+2023-04-06T11:53:32.620+02:00  INFO 6968 --- [restartedMain] pirate.PirateSpringBootApplication       : Starting PirateSpringBootApplication using Java 19.0.2 with PID 6968 (C:\Users\RyteNucker\Desktop\workspaceSopra\pirates\pirate_back\target\classes started by RyteNucker in C:\Users\RyteNucker\Desktop\workspaceSopra\pirates\pirate_back)
+2023-04-06T11:53:32.621+02:00 DEBUG 6968 --- [restartedMain] pirate.PirateSpringBootApplication       : Running with Spring Boot v3.0.4, Spring v6.0.6
+2023-04-06T11:53:32.621+02:00  INFO 6968 --- [restartedMain] pirate.PirateSpringBootApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-04-06T11:53:32.655+02:00  INFO 6968 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-04-06T11:53:32.656+02:00  INFO 6968 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-04-06T11:53:33.039+02:00  INFO 6968 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-06T11:53:33.079+02:00  INFO 6968 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 35 ms. Found 4 JPA repository interfaces.
+2023-04-06T11:53:33.461+02:00  INFO 6968 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-06T11:53:33.468+02:00  INFO 6968 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-06T11:53:33.469+02:00  INFO 6968 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-04-06T11:53:33.501+02:00  INFO 6968 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-06T11:53:33.502+02:00  INFO 6968 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 845 ms
+2023-04-06T11:53:33.599+02:00  INFO 6968 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-06T11:53:33.626+02:00  INFO 6968 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-06T11:53:33.795+02:00  INFO 6968 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-06T11:53:33.965+02:00  INFO 6968 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@f1147da
+2023-04-06T11:53:33.967+02:00  INFO 6968 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-06T11:53:33.998+02:00  INFO 6968 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-04-06T11:53:34.550+02:00  INFO 6968 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-06T11:53:34.556+02:00  INFO 6968 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-06T11:53:34.998+02:00  WARN 6968 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-06T11:53:35.203+02:00  INFO 6968 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-04-06T11:53:35.226+02:00  INFO 6968 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-06T11:53:35.233+02:00  INFO 6968 --- [restartedMain] pirate.PirateSpringBootApplication       : Started PirateSpringBootApplication in 2.846 seconds (process running for 3.097)
+2023-04-06T11:54:31.630+02:00  INFO 6968 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-06T11:54:31.631+02:00  INFO 6968 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-06T11:54:31.632+02:00  INFO 6968 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
