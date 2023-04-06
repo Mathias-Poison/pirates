@@ -16,14 +16,14 @@ export class LoginService {
 
   authentifier(username:string, password:string) {
     this.httpCompte.findByLoginAndPassword(username, password).subscribe(
-      cpte => {
-        console.log(cpte); // Utiliser la valeur de compte ici
-        this.compte = cpte;
-        sessionStorage.setItem('connected', JSON.stringify(cpte));
-        if(this.compte.type_compte=="capitaine") {
+      cmpt => {
+        console.log(cmpt); // Utiliser la valeur de compte ici
+        delete cmpt.password;
+        sessionStorage.setItem('connected', JSON.stringify(cmpt));
+        if(cmpt.type_compte=="capitaine") {
           this.router.navigate(['/pirate-menu']);
         }
-        else if (this.compte.type_compte=="client"){
+        else if (cmpt.type_compte=="client"){
           this.router.navigate(['/client-menu']);
         }
       });

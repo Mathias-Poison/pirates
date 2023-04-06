@@ -8,9 +8,20 @@ import { Compte } from '../models/models';
   styleUrls: ['./pirate-menu.component.css']
 })
 export class PirateMenuComponent {
-  constructor(private loginService : LoginService) {
 
+  compte = new Compte;
+
+  constructor() {
+
+    if(sessionStorage.getItem("connected")){
+
+      let compteobjet = JSON.parse(sessionStorage.getItem("connected"));
+      this.compte.age= compteobjet["age"];
+      this.compte.pseudonyme= compteobjet["pseudonyme"];
+      
+
+    }
+  
   }
-capitaine: Compte = this.loginService.compte;
 
 }

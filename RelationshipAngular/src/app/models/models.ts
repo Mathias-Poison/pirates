@@ -11,7 +11,6 @@ export class Compte {
     nom: string;
     prenom: string;
 
-
     constructor(id?: number, age?: number, login?: string, password?: string, type_compte?: string, pseudonyme?: string, tauxReussite?: number,nom?: string, prenom?: string) {
         this.id = id;
         this.age = age;
