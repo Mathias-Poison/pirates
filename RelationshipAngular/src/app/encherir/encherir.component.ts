@@ -40,6 +40,7 @@ export class EncherirComponent implements OnInit{
     enchere.prix=this.enchereForm;
     enchere.date=new Date(Date.now());
     enchere.capitaine=this.loginService.compte;
+    console.log(this.loginService.compte);
     enchere.mission=this.mission;
     this.encheresService.create(enchere);
     console.log(enchere);

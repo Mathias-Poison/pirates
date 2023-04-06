@@ -14,7 +14,7 @@ import pirate.controller.api.Views;
 @DiscriminatorValue("capitaine")
 public class Capitaine extends Compte {
 
-	@JsonView(Views.Capitaine.class)
+	@JsonView(Views.Common.class)
 	private String pseudonyme ;
 	
 	@Column(name="taux_reussite")

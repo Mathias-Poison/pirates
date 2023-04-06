@@ -18,14 +18,14 @@ public class Enchere {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@JsonView(Views.Common.class)
 	private Integer id;
-	@JsonView({Views.Enchere.class, Views.Capitaine.class, Views.Client.class})
+	@JsonView(Views.Common.class)
 	private double prix;
-	@JsonView({Views.Enchere.class, Views.Capitaine.class, Views.Client.class})
+	@JsonView(Views.Common.class)
 	private LocalDate date;
 	
 	@ManyToOne
 	@JoinColumn(name = "capitaine")
-	@JsonView(Views.Enchere.class)
+	@JsonView(Views.Common.class)
 	private Capitaine capitaine;
 	
 	@ManyToOne
