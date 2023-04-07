@@ -20,13 +20,14 @@ export class ConnexionComponent implements OnInit{
   loginForm: FormGroup;
   usernameCtrl:FormControl;
   passwordCtrl: FormControl;
-  submitted: boolean=false;
+ 
+  
   constructor(private loginService : LoginService, private formBuilder: FormBuilder, private router: Router){
 
   } 
-
+  error:string;
   ngOnInit() {
-
+    
     this.usernameCtrl=this.formBuilder.control('', Validators.required);
     this.passwordCtrl=this.formBuilder.control('', Validators.required);
     this.loginForm = this.formBuilder.group({
@@ -37,12 +38,17 @@ export class ConnexionComponent implements OnInit{
 
 
   onSubmit() {
-      this.submitted = true
+    
+    
       if (this.loginForm.invalid) {
           return;
       }
-
+      
       this.loginService.authentifier(this.loginForm.get('username').value,this.loginForm.get('password').value);
-     
+      this.error = this.loginService.getError();
+      console.log(this.error)
+
+
+
     }
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgModule } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Compte, Enchere, Mission } from '../models/models';
 import { MissionsPirateHttpService } from '../missions-pirate/missions-pirate-http.service';
@@ -13,21 +12,21 @@ import { EncheresHttpService } from '../encheres/encheres-http.service';
   styleUrls: ['./encherir.component.css']
 })
 export class EncherirComponent implements OnInit{
-  constructor(
-    private route: ActivatedRoute, 
-    private missionHttpservice : MissionsPirateHttpService, 
-    private loginService : LoginService,
-    private encheresService: EncheresHttpService,
-    private router : Router,
-
-    ) {}
+  
   mission: Mission=null;
   enchere: Enchere=null;
   bestOffre:number=null;
   enchereForm: number;
   private id:number;
   compte:Compte=this.loginService.getCompte();
-  
+  constructor(
+    private route: ActivatedRoute, 
+    private missionHttpservice : MissionsPirateHttpService, 
+    private loginService : LoginService,
+    private encheresService: EncheresHttpService,
+    private router : Router,
+    
+    ) {    }  
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -50,7 +49,11 @@ export class EncherirComponent implements OnInit{
             }
         }
         this.bestOffre = bestOffre;
-    } }
+    } 
+  } 
+    
+
+
 
   encherir(){
     let enchere : Enchere = new Enchere();
@@ -63,5 +66,4 @@ export class EncherirComponent implements OnInit{
     console.log(enchere);
     this.router.navigate(['/encheres']);
   }
-
 }

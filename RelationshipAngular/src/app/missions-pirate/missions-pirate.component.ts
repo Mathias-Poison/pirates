@@ -32,4 +32,5 @@ export class MissionsPirateComponent {
   list(): Array<Mission> {
     return this.missionService.findAll();
   }
+  
 }
