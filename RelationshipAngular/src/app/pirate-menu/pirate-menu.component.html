@@ -1,7 +1,37 @@
-    <title>Menu pirate</title>
-<h3>Bienvenue dans votre espace capitaine {{compte.pseudonyme}}</h3>
-<div>
-    <div><a class="nav-link" [routerLink]="['/missions-pirate']" routerLinkActive="active">Consulter les missions et enchérir </a></div>
-    <div><a class="nav-link" [routerLink]="['/encheres']" >Voir mes enchères </a></div>
+    
+    <div class="background"><title>Menu pirate</title>
+    <div id="menu">
+        <div id="logo">
+          <img src="assets/img/logob.png" alt="Logo" height="80px">
+        </div>
+        <div class="text-container">
+          <h6> Capitaine {{compte.pseudonyme}}</h6>
+          </div>
+      <div id="search">
+        <form>
+          <span><img src="assets/img/loupe.png" alt="recherche"></span>
+          <input type="text" placeholder="Rechercher...">
+          <button type="submit"><img src="assets/img/submit.png" alt="Submit"></button>
+        </form>
+      </div>
+      
+        <div id="icons">
+      <a href="#" class="menu-link"><img src="assets/img/menu_accueil.png" alt="Accueil" class="overlay-accueil"></a>
+      <a href="#" class="menu-link"><img src="assets/img/menu_enchere.png" alt="Enchères" class="overlay-enchere"></a>
+      <a href="#" class="menu-link"><img src="assets/img/menu_missions.png" alt="Mission" class="overlay-mission"></a>
+      <a href="#" class="menu-link"><img src="assets/img/menu_plus.png" alt="Plus" class="overlay-plus"></a>
+        </div>
+      </div>
+      <div class="container">
+        <h3>Bienvenue dans votre espace capitaine {{compte.pseudonyme}}</h3>
+        <div>
+            <div><a class="nav-link" [routerLink]="['/missions-pirate']" routerLinkActive="active">Consulter les missions et enchérir </a></div>
+            <div><a class="nav-link" [routerLink]="['/encheres']" >Voir mes enchères </a></div>
+              <div class="image-container">
+                  <img src="assets/img/enchere.png" alt="Enchère Image">
+              </div>
+          </div>
+
+</div>
 </div>
 

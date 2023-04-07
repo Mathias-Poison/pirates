@@ -1,0 +1,345 @@
+.background {
+    background-color: black;
+    cursor: url('/assets/sabre.cur'), default;
+    z-index: -5;
+  }
+  
+  a {
+    color: rgb(0, 0, 0);
+  }
+  
+  a:hover {
+    cursor: url('/assets/hook.cur'), pointer;
+  }
+  
+  a img:hover {
+    cursor: url('/assets/hook.cur'), pointer;
+    content: url('/assets/img/plus.png');
+    height: 30px;
+  }
+  
+  
+  
+  /* Ã©lÃ©ments page*/
+  .container {
+    background-color: white;
+    width: calc(100vw - 1057px);
+    height: calc(100vh - 50px);
+    margin: 0 100px;
+  }
+  
+  .text-container {
+    font-family: 'Pirata One', arial, sans-serif;
+    font-size: 70px;
+    text-align: center;
+  }
+  
+  .container img {
+    max-width: 100%;
+  }
+  
+  /* tableau */
+  table {
+    border-collapse: collapse;
+    font-family: "Livvic", arial;
+    font-size: 13px;
+    color: white;
+    width: calc(100% - 1058px);
+    margin: 0 auto; /* centrer horizontalement */
+    position: absolute; /* utiliser une position absolue pour centrer verticalement */
+    top: 40%; /* placer le haut du tableau Ã  50% de la hauteur de la page */
+    right: 72px; /* rÃ©gler la marge droite */
+    display: table; /* remplacer "flex" par "table" */
+  }
+  
+  th, td {
+    border: none;
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+    white-space: nowrap; /* add this line to prevent text wrapping */
+  }
+  
+  
+  td,
+  th {
+    border: none;
+    padding: 8px;
+    text-align: left; /* Aligner le texte Ã  gauche */
+  }
+  
+  
+  th:first-child {
+    border-left: 4px solid white;
+  }
+  
+  td:first-of-type {
+    border-left: 4px solid #ff3e3b;
+    width: 150px; /* ajuster la largeur selon vos besoins */
+  }
+  thead {
+    height: 50px; /* hauteur fixe */
+  }
+  
+  tbody tr {
+    background-color: #2f2f2f;
+  }
+  
+  tbody tr:hover {
+    background-color: #4d4d4d;
+    color: white;
+  }
+  
+  tbody tr:hover:not(.extra-info) td:first-of-type {
+    border-left: 4px solid #f86969;
+  }
+  
+  tbody tr:hover td:first-of-type {
+    border-left: 4px solid #f86969;
+  }
+  
+  tbody tr:hover:not(.extra-info) td:first-of-type {
+    border-left: 4px solid #ff3e3b;
+  }
+  
+  tr.extra-info td {
+    width: 200%;
+  }
+  
+  tr:hover + .extra-info {
+    display: table-row;
+    background-color: #4d4d4d;
+    font-size: 20px;
+    color: white;
+    padding: 0;
+  }
+  
+  tr:hover + .extra-info td:first-of-type {
+    border-left: none;
+  }
+  
+  .extra-info {
+    display: none;
+  }
+  
+  .extra-info td {
+    padding: 0 8px;
+    border-top: 4px solid #4d4d4d;
+    border-bottom: 4px solid #444444;
+  }
+  
+  .extra-info img {
+    height: 35px;
+    margin-right: 5px;
+  }
+  
+  /* menu */
+  #menu {
+    background-color: #4d4d4d;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #logo img {
+    height: 80px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  
+  #search {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 700px;
+    background-color: #fff;
+    border-radius: 25px;
+    margin: 0;
+    padding: 0 10px;
+  }
+  
+  #search img {
+    height: 30px;
+    margin-right: 5px;
+    margin-left: 10px;
+  }
+  
+  #search form {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #search input[type="text"] {
+    width: calc(100% - 50px);
+    height: 50px;
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    font-family: Livvic, sans-serif;
+    padding: 0 10px;
+    outline: none;
+  }
+  
+  #search button[type="submit"] {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    margin-left: -50px;
+    margin-top: 5px;
+  }
+  
+  #search button[type="submit"] img {
+    height: 30px;
+  }
+  
+  #icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+  }
+  
+  #icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    height: 80px;
+  }
+  
+  #icons img {
+    height: 50px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    #menu {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    #search {
+      width: 60%;
+      margin-left: 20px;
+    }
+  }
+  #menu {
+    background-color: #4d4d4d;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+  }
+  
+  #search {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 700px;
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 0 10px;
+    margin-right: 10px;
+  }
+  
+  #search img {
+    height: 30px;
+    margin-right: 5px;
+    margin-left: 10px;
+  }
+  
+  #search form {
+    width: 100%;
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #search input[type="text"] {
+    width: calc(100% - 50px);
+    height: 50px;
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    padding: 0 10px;
+    outline: none;
+  }
+  
+  #search button[type="submit"] {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  #search button[type="submit"] img {
+    height: 40px;
+  }
+  
+  
+  body {
+    margin: 0;
+  }
+  
+  html {
+    padding: 0;
+  }
+  
+  #icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    margin-right: 150px;
+  }
+  
+  #icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc((80% - 150px) / 4); /* 80% pour tenir compte du logo et de la barre de recherche et 150px pour la somme des marges et des bordures, divisÃ© par 4 pour obtenir une largeur Ã©gale pour chaque icÃ´ne */
+    margin: 0 50px; /* 50px de marge totale, divisÃ© par 2 pour obtenir une marge Ã©gale de chaque cÃ´tÃ© de l'icÃ´ne */
+    height: 80px;
+    box-sizing: border-box; /* inclure les bordures et le padding dans la largeur et la hauteur de l'Ã©lÃ©ment */
+  }
+  
+  #icons img {
+    height: 70px;
+    padding: 10px; /* ajouter du padding pour l'espace entre l'image et la bordure */
+    box-sizing: border-box; /* inclure les bordures et le padding dans la largeur et la hauteur de l'Ã©lÃ©ment */
+  }
+  
+  .icon {
+    height: 70px;
+  }
+  .menu-link img:hover {
+    cursor: url('/assets/hook.cur'), pointer;
+    height: 30px;
+  }
+  
+  .menu-link .overlay-accueil:hover {
+    content: url('/assets/img/menu_accueil_hover.png');
+  }
+  
+  .menu-link .overlay-enchere:hover {
+    content: url('/assets/img/menu_enchere_hover.png');
+  }
+  
+  .menu-link .overlay-mission:hover {
+    content: url('/assets/img/menu_missions_hover.png');
+  }
+  
+  .menu-link .overlay-plus:hover {
+    content: url('/assets/img/menu_plus_hover.png');
+  }
+  
+  
